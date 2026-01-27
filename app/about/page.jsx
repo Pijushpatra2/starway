@@ -193,6 +193,7 @@ import {
   Briefcase,
 } from "lucide-react";
 import InnerHero from "@/components/Common/InnerHero";
+import FinalCTA from "@/components/Common/FinalCTA";
 
 export default function AboutUsPage() {
   const [activeValue, setActiveValue] = useState("integrity");
@@ -1203,7 +1204,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* Growth Philosophy - Featured Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-600 via-cyan-600 to-purple-600">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-primary">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -1266,6 +1267,7 @@ export default function AboutUsPage() {
           </motion.div>
         </div>
       </section>
+      <FinalCTA />
     </main>
   );
 }
