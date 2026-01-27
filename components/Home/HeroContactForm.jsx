@@ -86,10 +86,7 @@ export default function HeroLeadForm() {
           <div className="sm:col-span-2">
             <button
               type="submit"
-              className="w-full py-4 rounded-xl bg-[#abc2ed]
-                         text-[#0B1D3A] font-semibold shadow-lg
-                         hover:scale-[1.03] hover:shadow-xl
-                         transition-all duration-300"
+              className="w-full py-4 rounded-xl bg-[#abc2ed] text-[#0B1D3A] font-semibold shadow-lg hover:scale-[1.03] hover:shadow-xl transition-all duration-300"
             >
               Get Free Consultation
             </button>
