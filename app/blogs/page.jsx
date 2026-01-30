@@ -280,7 +280,7 @@ export default function BlogPage() {
       />
 
       {/* Featured Articles */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-secondary">
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-[#96b3e9]">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -399,7 +399,7 @@ export default function BlogPage() {
       </section>
 
       {/* Main Content with Sidebar */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50">
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-secondary">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-4 gap-8">
             {/* Main Content */}
@@ -743,48 +743,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <div className="bg-gradient-to-br from-white to-blue-50 rounded-3xl p-12 border border-blue-200 shadow-xl">
-              <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-blue-500/10 to-cyan-500/10 text-blue-600 text-sm font-medium mb-6 border border-blue-200">
-                <PenTool className="w-4 h-4" />
-                Guest Contributions Welcome
-              </div>
 
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Want to Share Your Insights?
-              </h2>
-
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-                We're always looking for industry experts to contribute valuable
-                content to our blog. Share your expertise with our audience of
-                growth-minded professionals.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-xl font-semibold text-lg hover:shadow-2xl transition-all inline-flex items-center justify-center gap-2">
-                  <BookOpen className="w-5 h-5" />
-                  Submit an Article
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
-
-                <button className="px-8 py-4 bg-white text-gray-900 rounded-xl font-semibold text-lg hover:shadow-lg transition-all inline-flex items-center justify-center gap-2 border border-gray-300">
-                  <MessageCircle className="w-5 h-5" />
-                  Editorial Guidelines
-                </button>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
     </main>
   );
 }
