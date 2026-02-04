@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { MoveRight, ChevronsDown, Sparkle } from "lucide-react";
 import TabsSection from "@/components/TabsSection";
-import Testimonial from "@/components/Testimonial";
 import BottomSection from "@/components/BottomSection";
 import ClientSection from "@/components/ClientSection";
 import FAQ from "@/components/FAQ";
@@ -14,6 +13,7 @@ import TestimonialsSection from "@/components/Home/Testimonials";
 import AboutUs from "@/components/Home/AboutUs";
 import ScrollOverlayFramer from "@/components/Home/ScrollOverlayFramer";
 import FinalCTA from "@/components/Common/FinalCTA";
+import TestimonialSection from "@/components/Home/Testimonial";
 
 export default function Home() {
   const services = [
@@ -68,34 +68,14 @@ export default function Home() {
       <PortfolioSection />
       {/* Testimonials */}
 
-      <TestimonialsSection />
       <StatsGrid />
 
       {/* Clients Section */}
-      <ClientSection />
-      <div className="w-[80%] mx-auto mt-10">
-        <h2 className="text-white font-bold text-4xl sm:text-5xl text-center">
-          Clients
-        </h2>
-        <div className="flex flex-wrap gap-10 items-center justify-evenly mt-10">
-          <div>
-            <h2 className="text-white text-3xl font-bold text-center">150+</h2>
-            <p className="text-[#00C8FF] text-xl text-center">Clients</p>
-          </div>
-          <div>
-            <h2 className="text-white text-3xl font-bold text-center">98%</h2>
-            <p className="text-[#00C8FF] text-xl text-center">Happy clients</p>
-          </div>
-          <div>
-            <h2 className="text-white text-3xl font-bold text-center">+112%</h2>
-            <p className="text-[#00C8FF] text-xl text-center">Monthly Leads</p>
-          </div>
-        </div>
-      </div>
-
+      <TestimonialSection />
+      <FAQ />
       {/* Bottom section */}
       <div className="w-[80%] mx-auto">
-        <FAQ />
+        
       </div>
       <FinalCTA />
     </div>

@@ -4,10 +4,10 @@ import Image from "next/image";
 
 export default function AboutUs() {
     return (
-        <section className="w-full bg-white py-30">
-            <div className="max-w-[80%] mx-auto px-6">
+        <section className="w-full bg-gray-100 py-30">
+            <div className="w-[70%] px-4 mx-auto">
                 {/* Top Grid */}
-                <div className="flex justify-evenly">
+                <div className="flex justify-evenly gap-[2%]">
                     {/* LEFT IMAGES */}
                     <div className="w-[40%] flex flex-col gap-2">
                         <div>
@@ -27,7 +27,7 @@ export default function AboutUs() {
                     </div>
 
                     {/* RIGHT CONTENT */}
-                    <div className="w-[50%]">
+                    <div className="w-[58%]">
                         <span className="inline-flex items-center gap-2 text-sm font-semibold text-green-600 mb-4">
                             <span className="w-2 h-2 rounded-full bg-green-600"></span>
                             About Us
@@ -55,14 +55,6 @@ export default function AboutUs() {
                         </button>
                     </div>
                 </div>
-
-                {/* STATS */}
-                {/* <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                    <Stat value="3k+" label="Successful Projects" />
-                    <Stat value="200+" label="Expert Team" />
-                    <Stat value="350+" label="Happy Customers" />
-                    <Stat value="16+" label="Years of Experience" />
-                </div> */}
             </div>
         </section>
     );

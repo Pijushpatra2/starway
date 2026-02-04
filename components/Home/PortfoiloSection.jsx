@@ -236,7 +236,7 @@ export default function PortfolioSection() {
 
   return (
     <section className=" py-16 md:py-20 overflow-hidden bg-secondary">
-      <div className="relative z-10 max-w-7xl mx-auto">
+      <div className="w-[70%] px-4 relative z-10 mx-auto">
         {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -1,137 +1,110 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Star,
-  Handshake,
-  Users,
-  ShoppingBag,
-  DollarSign,
-} from "lucide-react";
 
-const stats = [
+const container = {
+  hidden: { opacity: 0, y: 40 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      staggerChildren: 0.15,
+      ease: "easeOut",
+      duration: 0.6,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 },
+};
+
+const STATS = [
   {
-    icon: Star,
     value: "4.8",
-    label: "High ratings from satisfied clients.",
-    stars: true,
+    title: "Client Ratings",
+    desc:
+      "Consistently high ratings from satisfied clients across multiple platforms.",
   },
   {
-    icon: Handshake,
     value: "98%",
-    label: "Trusted worldwide by 98% happy clients.",
+    title: "Client Trust",
+    desc:
+      "Trusted worldwide by clients who rely on us for consistent results.",
   },
   {
-    icon: Users,
     value: "7+",
-    label: "Years of industry experience",
+    title: "Years Experience",
+    desc:
+      "Proven industry expertise delivering growth-focused digital solutions.",
   },
   {
-    icon: ShoppingBag,
     value: "150+",
-    label: "Brands grown successfully",
+    title: "Brands Scaled",
+    desc:
+      "Successfully grown brands across technology, retail, and services.",
   },
   {
-    icon: DollarSign,
     value: "15M+",
-    label: "$15M+ client revenue generated",
+    title: "Revenue Generated",
+    desc:
+      "Over $15M in client revenue generated through performance-driven strategies.",
   },
 ];
 
-export default function StatsSection({
-  iconSize = "w-7 h-7",
-  valueSize = "text-2xl",
-  cardBg = "bg-gray-200",
-  borderColor = "border-gray-400",
-  textColor = "text-black",
-  iconColor = "text-black",
-}) {
+export default function StatsCardSection() {
   return (
-    <section className="w-full py-20 bg-primary">
-      <div className="max-w-[80%] mx-auto px-6">
-
-        {/* 🔹 Heading */}
+    <section className="w-full py-10 sm:py-16">
+      <div className="w-[70%] px-4 mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-14"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-white">
-            Proven Results That Speak for Themselves
-          </h2>
-          <p className="mt-3 max-w-2xl mx-auto text-white">
-            Our experience, performance, and client satisfaction define the
-            success we deliver consistently.
-          </p>
-        </motion.div>
-
-        {/* 🔹 Stats Grid */}
-        <motion.div
+          variants={container}
           initial="hidden"
-          whileInView="visible"
+          whileInView="show"
           viewport={{ once: true }}
-          variants={{
-            hidden: {},
-            visible: { transition: { staggerChildren: 0.12 } },
-          }}
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6"
+          className="relative bg-white rounded-[28px] sm:rounded-[36px] shadow-xl px-6 sm:px-10 py-8 sm:py-12"
         >
-          {stats.map((item, index) => {
-            const Icon = item.icon;
+          {/* TOP */}
+          <motion.div
+            variants={item}
+            className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mb-20"
+          >
+            <div>
+              <h3 className="text-lg sm:text-xl lg:text-4xl font-semibold text-destructive">
+                We only deliver results.
+              </h3>
+              <p className="text-sm text-gray-500 mt-1 max-w-md">
+                We don’t use excuses or shortcuts. Just measurable outcomes.
+              </p>
+            </div>
 
-            return (
+            <div className="flex items-center gap-3">
+              <button className="px-5 py-2 rounded-full bg-destructive text-white text-sm font-medium hover:bg-gray-800 transition">
+                Get Started
+              </button>
+            </div>
+          </motion.div>
+
+          {/* STATS */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+            {STATS.map((stat, i) => (
               <motion.div
-                key={index}
-                variants={{
-                  hidden: { opacity: 0, y: 30 },
-                  visible: { opacity: 1, y: 0 },
-                }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                whileHover={{ y: -6 }}
-                className={`border ${borderColor} p-4 flex justify-center`}
+                key={i}
+                variants={item}
+                className="space-y-2"
               >
-                {/* INNER CARD */}
-                <div
-                  className={`
-                    ${cardBg}
-                    w-full aspect-square
-                    flex flex-col items-center justify-center
-                    text-center px-4
-                  `}
-                >
-                  {/* Icon / Stars */}
-                  {item.stars ? (
-                    <div className="flex gap-1 mb-3">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className={`w-4 h-4 ${
-                            i < 4 ? "fill-black" : "stroke-black"
-                          }`}
-                        />
-                      ))}
-                    </div>
-                  ) : (
-                    <Icon
-                      className={`${iconSize} mb-3 ${iconColor}`}
-                    />
-                  )}
-
-                  {/* Value */}
-                  <h3 className={`${valueSize} font-bold ${textColor}`}>
-                    {item.value}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="mt-2 text-xs text-gray-700 leading-snug">
-                    {item.label}
-                  </p>
-                </div>
+                <h4 className="text-3xl sm:text-4xl font-bold text-destructive">
+                  {stat.value}
+                </h4>
+                <p className="text-sm font-semibold text-gray-800">
+                  {stat.title}
+                </p>
+                <p className="text-sm text-gray-500 leading-relaxed">
+                  {stat.desc}
+                </p>
               </motion.div>
-            );
-          })}
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

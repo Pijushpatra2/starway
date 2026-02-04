@@ -171,7 +171,7 @@ import {
 export default function DigitalMarketingExpertise() {
   return (
     <section className="w-full bg-secondary py-20">
-      <div className="max-w-[80%] mx-auto px-6 relative">
+      <div className="w-[70%] mx-auto px-4 relative">
         {/* GRID WRAPPER */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* ===== TOP 4 CARDS ===== */}
