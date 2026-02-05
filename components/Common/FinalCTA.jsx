@@ -61,17 +61,13 @@ export default function FinalCTA() {
                 <input
                   type="email"
                   placeholder="Enter your email address"
-                  className="w-full px-6 py-4 rounded-xl bg-white text-gray-900
-                 focus:outline-none focus:ring-2 focus:ring-[#abc2ed]"
+                  className="w-full px-6 py-4 rounded-xl bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#abc2ed]"
                 />
               </div>
 
               {/* Button */}
               <button
-                className="w-full sm:w-[40%] px-6 py-4 rounded-xl
-               bg-[#abc2ed] text-[#0B1D3A]
-               font-semibold shadow-lg
-               hover:scale-105 transition-transform"
+                className="w-full sm:w-[40%] px-6 py-4 rounded-xl bg-[#abc2ed] text-[#0B1D3A] font-semibold shadow-lg hover:scale-105 transition-transform"
               >
                 Subscribe
               </button>

@@ -3,7 +3,6 @@
 // import { useState } from "react";
 // import { ChevronDown, ChevronUp } from "lucide-react";
 
-
 // export default function FAQ() {
 //   const faqs = [
 //     {
@@ -146,9 +145,6 @@
 //   );
 // }
 
-
-
-
 "use client";
 
 import { useState } from "react";
@@ -198,56 +194,56 @@ export default function FaqSection() {
   const [open, setOpen] = useState(false);
 
   /* DIGITAL MARKETING CONTENT */
-const baseFaqs = [
-  {
-    icon: Target,
-    title: "What digital marketing services do you offer?",
-    desc: "We help businesses grow faster with ROI-driven SEO, paid ads (Google & Meta), social media marketing, content creation, email automation, CRO, and full-funnel performance marketing — all under one roof.",
-  },
-  {
-    icon: BarChart3,
-    title: "How do you measure campaign success?",
-    desc: "We focus on real business outcomes, not vanity metrics. Every campaign is measured by leads, conversions, ROAS, customer acquisition cost, and revenue growth — tracked transparently in live reports.",
-  },
-  {
-    icon: Settings,
-    title: "Can you create a custom strategy for my business?",
-    desc: "Absolutely. We don’t use templates. Your strategy is built around your goals, audience, competitors, and budget — designed to maximize conversions and long-term scalability.",
-  },
-  {
-    icon: TrendingUp,
-    title: "How quickly can I expect results?",
-    desc: "Paid campaigns can generate leads within weeks. SEO and organic growth typically take 3–6 months but deliver compounding, long-term results that lower acquisition costs over time.",
-  },
-  {
-    icon: CreditCard,
-    title: "How does pricing work?",
-    desc: "Our pricing is flexible and transparent. We offer monthly retainers and performance-focused plans based on your growth goals — no hidden fees and no long-term lock-ins.",
-  },
-  {
-    icon: FileText,
-    title: "Will I get regular performance reports?",
-    desc: "Yes. You receive clear, easy-to-understand reports showing what’s working, what’s improving, and what we’re optimizing next — so you always know where your budget is going.",
-  },
-];
+  const baseFaqs = [
+    {
+      icon: Target,
+      title: "What digital marketing services do you offer?",
+      desc: "We help businesses grow faster with ROI-driven SEO, paid ads (Google & Meta), social media marketing, content creation, email automation, CRO, and full-funnel performance marketing — all under one roof.",
+    },
+    {
+      icon: BarChart3,
+      title: "How do you measure campaign success?",
+      desc: "We focus on real business outcomes, not vanity metrics. Every campaign is measured by leads, conversions, ROAS, customer acquisition cost, and revenue growth — tracked transparently in live reports.",
+    },
+    {
+      icon: Settings,
+      title: "Can you create a custom strategy for my business?",
+      desc: "Absolutely. We don’t use templates. Your strategy is built around your goals, audience, competitors, and budget — designed to maximize conversions and long-term scalability.",
+    },
+    {
+      icon: TrendingUp,
+      title: "How quickly can I expect results?",
+      desc: "Paid campaigns can generate leads within weeks. SEO and organic growth typically take 3–6 months but deliver compounding, long-term results that lower acquisition costs over time.",
+    },
+    {
+      icon: CreditCard,
+      title: "How does pricing work?",
+      desc: "Our pricing is flexible and transparent. We offer monthly retainers and performance-focused plans based on your growth goals — no hidden fees and no long-term lock-ins.",
+    },
+    {
+      icon: FileText,
+      title: "Will I get regular performance reports?",
+      desc: "Yes. You receive clear, easy-to-understand reports showing what’s working, what’s improving, and what we’re optimizing next — so you always know where your budget is going.",
+    },
+  ];
 
-const moreFaqs = [
-  {
-    icon: ShieldCheck,
-    title: "Is my data and ad account secure?",
-    desc: "100%. Your data, ad accounts, and access credentials are fully protected. We follow strict security practices and only access what’s required to manage and optimize your campaigns.",
-  },
-  {
-    icon: Users,
-    title: "Do you work with startups and established brands?",
-    desc: "Yes. We work with startups, growing businesses, and enterprise brands — scaling strategies smoothly as your business grows without disrupting momentum.",
-  },
-  {
-    icon: Globe,
-    title: "Can you run international marketing campaigns?",
-    desc: "Definitely. We manage global campaigns using geo-targeting, localized messaging, multilingual ads, and region-specific strategies to help brands scale worldwide.",
-  },
-];
+  const moreFaqs = [
+    {
+      icon: ShieldCheck,
+      title: "Is my data and ad account secure?",
+      desc: "100%. Your data, ad accounts, and access credentials are fully protected. We follow strict security practices and only access what’s required to manage and optimize your campaigns.",
+    },
+    {
+      icon: Users,
+      title: "Do you work with startups and established brands?",
+      desc: "Yes. We work with startups, growing businesses, and enterprise brands — scaling strategies smoothly as your business grows without disrupting momentum.",
+    },
+    {
+      icon: Globe,
+      title: "Can you run international marketing campaigns?",
+      desc: "Definitely. We manage global campaigns using geo-targeting, localized messaging, multilingual ads, and region-specific strategies to help brands scale worldwide.",
+    },
+  ];
 
   return (
     <section className="relative bg-primary py-14 sm:py-20 overflow-hidden">
@@ -258,18 +254,19 @@ const moreFaqs = [
         {/* Header */}
         <div className="mb-12 flex flex-col gap-6 sm:flex-row sm:justify-between">
           <div>
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-900">
+            <h2 className="text-xl sm:text-2xl lg:text-4xl font-semibold text-white">
               Digital Marketing FAQs
             </h2>
-            <p className="mt-2 max-w-xl text-sm sm:text-base text-gray-600">
+            <p className="mt-2 max-w-xl text-sm sm:text-base text-gray-200">
               Everything you need to know about our digital marketing services,
               process, and results.
             </p>
           </div>
-
-          <button className="rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">
-            View Case Studies ↗
-          </button>
+          <div>
+            <button className="rounded-lg border border-gray-300 px-6 py-2 text-sm font-semibold text-gray-700 bg-white hover:bg-gray-50 shadow-lg hover:scale-105 transition-transform cursor-pointer">
+              View Case Studies
+            </button>
+          </div>
         </div>
 
         {/* Base FAQs */}
@@ -277,15 +274,25 @@ const moreFaqs = [
           {baseFaqs.map((faq, i) => {
             const Icon = faq.icon;
             return (
-              <div key={i} className="flex gap-4">
-                <div className="mt-1 flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-lg border bg-gray-50 text-gray-600">
-                  <Icon size={16} />
+              <div
+                key={i}
+                className="flex gap-4 sm:gap-5 items-start border-b border-white/10 pb-6"
+              >
+                {/* Icon Box */}
+                <div className="mt-0.5 flex h-10 w-10 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-xl border-2 border-white/15 text-white/80">
+                  <Icon size={20} />
                 </div>
-                <div>
-                  <h4 className="text-sm sm:text-base font-semibold text-gray-900">
+
+                {/* Content */}
+                <div className="flex-1">
+                  <h4 className="text-base sm:text-lg lg:text-xl font-semibold text-white tracking-tight leading-snug">
                     {faq.title}
                   </h4>
-                  <p className="mt-2 text-sm sm:text-base text-gray-600 leading-relaxed">
+
+                  {/* small separator */}
+                  <div className="mt-2 h-[2px] w-10 rounded-full bg-white/20" />
+
+                  <p className="mt-3 text-sm sm:text-base text-gray-200/90 leading-relaxed">
                     {faq.desc}
                   </p>
                 </div>
@@ -312,16 +319,28 @@ const moreFaqs = [
                     variants={rollItem}
                     className="flex gap-4"
                   >
-                    <div className="mt-1 flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-lg border bg-gray-50 text-gray-600">
-                      <Icon size={16} />
-                    </div>
-                    <div>
-                      <h4 className="text-sm sm:text-base font-semibold text-gray-900">
-                        {faq.title}
-                      </h4>
-                      <p className="mt-2 text-sm sm:text-base text-gray-600 leading-relaxed">
-                        {faq.desc}
-                      </p>
+                    <div
+                      key={i}
+                      className="flex gap-4 sm:gap-5 items-start border-b border-white/10 pb-6"
+                    >
+                      {/* Icon Box */}
+                      <div className="mt-0.5 flex h-10 w-10 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-xl border-2 border-white/15 text-white/80">
+                        <Icon size={20} />
+                      </div>
+
+                      {/* Content */}
+                      <div className="flex-1">
+                        <h4 className="text-base sm:text-lg lg:text-xl font-semibold text-white tracking-tight leading-snug">
+                          {faq.title}
+                        </h4>
+
+                        {/* small separator */}
+                        <div className="mt-2 h-[2px] w-10 rounded-full bg-white/20" />
+
+                        <p className="mt-3 text-sm sm:text-base text-gray-200/90 leading-relaxed">
+                          {faq.desc}
+                        </p>
+                      </div>
                     </div>
                   </motion.div>
                 );
@@ -334,7 +353,7 @@ const moreFaqs = [
         <div className="mt-14 text-center">
           <button
             onClick={() => setOpen((v) => !v)}
-            className="rounded-lg border border-gray-300 px-6 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 transition"
+            className="rounded-lg border border-gray-300 px-6 py-2 text-sm font-semibold text-gray-700 bg-white hover:bg-gray-50 shadow-lg hover:scale-105 transition-transform cursor-pointer"
           >
             {open ? "Show less" : "Load more"}
           </button>
