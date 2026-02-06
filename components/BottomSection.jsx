@@ -77,9 +77,7 @@
 //   );
 // }
 
-
-
-import FAQ from "@/components/FAQ";
+import FAQ from "@/components/Home/FAQ";
 import Image from "next/image";
 
 export default function BottomSection() {
@@ -111,18 +109,15 @@ export default function BottomSection() {
             {[
               {
                 title: "Performance",
-                desc:
-                  "Starway Web Digital maintains an optimization score of at least 70%.",
+                desc: "Starway Web Digital maintains an optimization score of at least 70%.",
               },
               {
                 title: "Spend",
-                desc:
-                  "Managed over $10,000 USD in ad spend within the last 90 days.",
+                desc: "Managed over $10,000 USD in ad spend within the last 90 days.",
               },
               {
                 title: "Certifications",
-                desc:
-                  "Certified Google Ads strategists driving measurable results.",
+                desc: "Certified Google Ads strategists driving measurable results.",
               },
             ].map((item, index) => (
               <div
@@ -147,8 +142,6 @@ export default function BottomSection() {
       </div>
 
       {/* ================= Final CTA ================= */}
-
-
     </section>
   );
 }

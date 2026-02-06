@@ -3,7 +3,7 @@ import { MoveRight, ChevronsDown, Sparkle } from "lucide-react";
 import TabsSection from "@/components/TabsSection";
 import BottomSection from "@/components/BottomSection";
 import ClientSection from "@/components/ClientSection";
-import FAQ from "@/components/FAQ";
+import FAQ from "@/components/Home/FAQ";
 import AIOptimization from "@/components/AIOptimization";
 import HeroSection from "@/components/Home/HeroSection";
 import ServicesSection from "@/components/Home/ServicesSection";
@@ -74,9 +74,7 @@ export default function Home() {
       <TestimonialSection />
       <FAQ />
       {/* Bottom section */}
-      <div className="w-[80%] mx-auto">
-        
-      </div>
+      <div className="w-[80%] mx-auto"></div>
       <FinalCTA />
     </div>
   );

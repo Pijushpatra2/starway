@@ -5,6 +5,8 @@ import ServiceCard from "@/components/Services/Service-card";
 import InnerHero from "@/components/Common/InnerHero";
 import WhyChooseSection from "@/components/Common/WhyChooseSection";
 import ServiceCTA from "@/components/Services/ServiceCTA";
+import GeneralFaq from "@/components/FaqAccordion";
+import FaqAccordion from "@/components/FaqAccordion";
 
 const services = [
   {
@@ -209,6 +211,40 @@ const services = [
   },
 ];
 
+const generalFaqs = [
+  {
+    question: "What digital marketing services do you offer?",
+    answer:
+      "We offer complete digital marketing solutions including SEO, Google Ads (PPC), social media marketing, content marketing, website optimization, email marketing, and lead generation campaigns tailored to your business goals.",
+  },
+  {
+    question: "How long does it take to see results?",
+    answer:
+      "It depends on the service. Paid ads can generate leads within days, while SEO usually takes 3–6 months for strong ranking improvements. We focus on both short-term growth and long-term performance.",
+  },
+  {
+    question: "Do you provide SEO and Google Ads together?",
+    answer:
+      "Yes. In fact, combining SEO and Google Ads is one of the best strategies. Ads bring instant visibility, while SEO builds long-term organic traffic and reduces cost per lead over time.",
+  },
+  {
+    question: "How do you measure campaign performance?",
+    answer:
+      "We track performance using key metrics like traffic, conversions, lead quality, ROI, CTR, cost per lead, and engagement. You also receive clear monthly reports with insights and improvement strategies.",
+  },
+  {
+    question: "Will you manage my social media accounts?",
+    answer:
+      "Yes. We handle complete social media management including content planning, creative design, posting schedules, audience engagement, and paid social campaigns across platforms like Instagram, Facebook, LinkedIn, and Twitter.",
+  },
+  {
+    question: "Do you offer custom plans for businesses?",
+    answer:
+      "Absolutely. Every business has different goals, so we create customized marketing plans based on your industry, target audience, competition, and budget to ensure maximum results and scalability.",
+  },
+];
+
+
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -264,6 +300,14 @@ export default function ServicesPage() {
       </section>
 
       <WhyChooseSection />
+       <FaqAccordion
+        title="Service FAQs"
+        subtitle="Everything you need to know about our services."
+        linkText="Please contact our friendly team."
+        linkHref="/contact"
+        faqs={generalFaqs}
+        defaultOpenIndex={0}
+      />
       <ServiceCTA />
     </main>
   );
