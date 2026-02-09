@@ -12,89 +12,130 @@ export default function HeroLeadForm() {
       className="relative max-w-xl mx-auto"
     >
       {/* Form Card */}
-      <div className="relative z-10 p-6 sm:p-8 rounded-3xl bg-destructive border border-white/20 shadow-2xl">
-        <h3 className="text-xl sm:text-2xl font-semibold text-white text-center mb-6">
-          Get a Free Consultation
-        </h3>
+      <div className="relative z-10 p-6 sm:p-6 rounded-3xl bg-white/20 backdrop-blur-xl border border-white/20 shadow-[0_10px_60px_rgba(0,0,0,0.4)]">
+
+        {/* Heading */}
+        <div className="text-center mb-5">
+          <h3 className="text-2xl sm:text-3xl font-serif text-white">
+            Get a Free Consultation
+          </h3>
+        </div>
 
         <form className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
           {/* Full Name */}
-          <div>
-            <label className="sr-only">Full Name</label>
+          <div className="relative w-full">
             <input
+              id="fullname"
               type="text"
               required
-              placeholder="Full Name"
-              className="form-input"
+              placeholder=" "
+              className="peer w-full bg-transparent border-b border-white/30 px-1 pt-7 pb-3 text-white text-base outline-none focus:border-[#abc2ed] transition-all"
             />
+            <label
+              htmlFor="fullname"
+              className="absolute left-1 top-5 text-base text-white/70 transition-all duration-300 peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-sm peer-focus:text-[#abc2ed] peer-not-placeholder-shown:top-2 peer-not-placeholder-shown:text-sm peer-not-placeholder-shown:text-[#abc2ed]"
+            >
+              Full Name *
+            </label>
           </div>
 
-          {/* Phone */}
-          <div>
-            <label className="sr-only">Mobile Number</label>
+          {/* Mobile */}
+          <div className="relative w-full">
             <input
+              id="phone"
               type="tel"
               required
-              placeholder="Mobile Number"
-              className="form-input"
+              placeholder=" "
+              className="peer w-full bg-transparent border-b border-white/30 px-1 pt-7 pb-3 text-white text-base outline-none focus:border-[#abc2ed] transition-all"
             />
+            <label
+              htmlFor="phone"
+              className="absolute left-1 top-5 text-base text-white/70 transition-all duration-300 peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-sm peer-focus:text-[#abc2ed] peer-not-placeholder-shown:top-2 peer-not-placeholder-shown:text-sm peer-not-placeholder-shown:text-[#abc2ed]"
+            >
+              Mobile Number *
+            </label>
           </div>
 
           {/* Email */}
-          <div>
-            <label className="sr-only">Email Address</label>
+          <div className="relative w-full">
             <input
+              id="email"
               type="email"
               required
-              placeholder="Email Address"
-              className="form-input"
+              placeholder=" "
+              className="peer w-full bg-transparent border-b border-white/30 px-1 pt-7 pb-3 text-white text-base outline-none focus:border-[#abc2ed] transition-all"
             />
+            <label
+              htmlFor="email"
+              className="absolute left-1 top-5 text-base text-white/70 transition-all duration-300 peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-sm peer-focus:text-[#abc2ed] peer-not-placeholder-shown:top-2 peer-not-placeholder-shown:text-sm peer-not-placeholder-shown:text-[#abc2ed]"
+            >
+              Email Address *
+            </label>
           </div>
 
           {/* Job Title */}
-          <div>
-            <label className="sr-only">Job Title</label>
+          <div className="relative w-full">
             <input
+              id="designation"
               type="text"
-              placeholder="Job Title"
-              className="form-input"
+              placeholder=" "
+              className="peer w-full bg-transparent border-b border-white/30 px-1 pt-7 pb-3 text-white text-base outline-none focus:border-[#abc2ed] transition-all"
             />
+            <label
+              htmlFor="designation"
+              className="absolute left-1 top-5 text-base text-white/70 transition-all duration-300 peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-sm peer-focus:text-[#abc2ed] peer-not-placeholder-shown:top-2 peer-not-placeholder-shown:text-sm peer-not-placeholder-shown:text-[#abc2ed]"
+            >
+              Designation
+            </label>
           </div>
 
           {/* Website */}
-          <div className="sm:col-span-2">
-            <label className="sr-only">Website URL</label>
+          <div className="relative w-full sm:col-span-2">
             <input
-              type="url"
-              placeholder="Website URL (optional)"
-              className="form-input"
+              id="website"
+              type="text"
+              placeholder=" "
+              className="peer w-full bg-transparent border-b border-white/30 px-1 pt-7 pb-3 text-white text-base outline-none focus:border-[#abc2ed] transition-all"
             />
+            <label
+              htmlFor="website"
+              className="absolute left-1 top-5 text-base text-white/70 transition-all duration-300 peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-sm peer-focus:text-[#abc2ed] peer-not-placeholder-shown:top-2 peer-not-placeholder-shown:text-sm peer-not-placeholder-shown:text-[#abc2ed]"
+            >
+              Website URL (Optional)
+            </label>
           </div>
 
-          {/* Message */}
-          <div className="sm:col-span-2">
-            <label className="sr-only">Challenges</label>
+          {/* Challenges */}
+          <div className="relative w-full sm:col-span-2">
             <textarea
-              rows={4}
+              id="message"
+              rows={1}
               required
-              placeholder="Tell us about your challenges"
-              className="form-input resize-none"
+              placeholder=" "
+              className="peer w-full bg-transparent border-b border-white/30 px-1 pt-7 pb-3 text-white text-base outline-none focus:border-[#abc2ed] transition-all resize-none"
             />
+            <label
+              htmlFor="message"
+              className="absolute left-1 top-5 text-base text-white/70 transition-all duration-300 peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-sm peer-focus:text-[#abc2ed] peer-not-placeholder-shown:top-2 peer-not-placeholder-shown:text-sm peer-not-placeholder-shown:text-[#abc2ed]"
+            >
+              Your Challenges *
+            </label>
           </div>
 
           {/* Submit */}
-          <div className="sm:col-span-2">
+          <div className="sm:col-span-2 pt-4">
             <button
               type="submit"
-              className="w-full py-4 rounded-xl bg-[#abc2ed] text-[#0B1D3A] font-semibold shadow-lg hover:scale-[1.03] hover:shadow-xl transition-all duration-300"
+              className="w-full py-4 rounded-2xl bg-destructive text-white text-base font-semibold shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300"
             >
               Get Free Consultation
             </button>
           </div>
         </form>
 
-        <p className="text-xs text-white/70 mt-4 text-center">
-          We respect your privacy. No spam, ever.
+        <p className="text-xs text-white/60 mt-5 text-center leading-relaxed">
+          We respect your privacy. Your details are secure and never shared.
         </p>
       </div>
     </motion.div>

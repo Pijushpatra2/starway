@@ -15,7 +15,7 @@ export default function Hero() {
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h1 className="text-4xl md:text-5xl xl:text-6xl font-extrabold leading-tight">
+          <h1 className="text-4xl md:text-4xl lg:text-5xl 2xl:text-6xl font-extrabold leading-tight">
             Grow Your Business <br /> Visibility Everywhere <br />
             People Search
           </h1>
