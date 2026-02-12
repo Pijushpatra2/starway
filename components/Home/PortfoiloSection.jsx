@@ -236,7 +236,7 @@ export default function PortfolioSection() {
 
   return (
     <section className=" py-16 md:py-20 overflow-hidden bg-secondary">
-      <div className="w-[70%] px-4 relative z-10 mx-auto">
+      <div className="w-full lg:w-[85%] xl:w-[80%] 2xl:w-[70%] px-4 relative z-10 mx-auto">
         {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -266,7 +266,7 @@ export default function PortfolioSection() {
                 </span>
               </motion.div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4 text-balance">
+              <h1 className="text-4xl xl:text-5xl 2xl:text-6xl font-bold text-gray-900 leading-tight mb-4 text-balance">
                 Turning Ideas into{" "}
                 <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                   Impactful Results
@@ -283,7 +283,7 @@ export default function PortfolioSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex-1 lg:max-w-md"
+              className="hidden lg:flex flex-1 lg:max-w-md"
             >
               <div className="bg-white rounded-2xl border-2 border-gray-100 p-8 shadow-lg hover:shadow-xl transition-shadow">
                 <p className="text-gray-700 text-base leading-relaxed">

@@ -9,7 +9,7 @@ export default function HeroLeadForm() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true }}
-      className="relative max-w-xl mx-auto"
+      className="relative max-w-5xl lg:max-w-xl mx-auto"
     >
       {/* Form Card */}
       <div className="relative z-10 p-6 sm:p-6 rounded-3xl bg-white/20 backdrop-blur-xl border border-white/20 shadow-[0_10px_60px_rgba(0,0,0,0.4)]">

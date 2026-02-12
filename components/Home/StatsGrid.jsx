@@ -56,7 +56,7 @@ const STATS = [
 export default function StatsCardSection() {
   return (
     <section className="w-full py-10 sm:py-16">
-      <div className="w-[70%] px-4 mx-auto">
+      <div className="w-full lg:w-[85%] xl:w-[80%] 2xl:w-[70%] px-4 mx-auto">
         <motion.div
           variants={container}
           initial="hidden"

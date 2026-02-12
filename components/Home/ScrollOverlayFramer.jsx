@@ -151,180 +151,473 @@ export default function AISEOSection() {
     { y: y3, opacity: opacity3, scale: scale3 },
   ];
 
-  return (
-    <section ref={containerRef} className="relative h-[350vh] w-full pt-20">
-      {/* Section Header */}
-      <div className="sticky top-0 z-50 backdrop-blur-md">
-        <div className="max-w-[80%] mx-auto px-4 py-6 border-b border-white/10">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center"
-          >
-            <p className="text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 uppercase tracking-widest mb-3">
-              Advanced AI SEO Solutions
-            </p>
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-2">
-              Dominate AI-Powered Search
-            </h2>
-            <p className="text-base text-white/60 max-w-2xl mx-auto">
-              Harness the power of artificial intelligence to rank higher, drive
-              more traffic, and accelerate business growth in the era of AI
-              search.
-            </p>
-          </motion.div>
-        </div>
-      </div>
+//   return (
+//     <section ref={containerRef} className="relative h-[350vh] w-full pt-20">
+//       {/* Section Header */}
+//       <div className="sticky top-0 z-50 backdrop-blur-md">
+//         <div className="max-w-[80%] mx-auto px-4 py-6 border-b border-white/10">
+//           <motion.div
+//             initial={{ opacity: 0, y: -20 }}
+//             animate={{ opacity: 1, y: 0 }}
+//             transition={{ duration: 0.6 }}
+//             className="text-center"
+//           >
+//             <p className="text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 uppercase tracking-widest mb-3">
+//               Advanced AI SEO Solutions
+//             </p>
+//             <h2 className="text-3xl md:text-5xl font-bold text-white mb-2">
+//               Dominate AI-Powered Search
+//             </h2>
+//             <p className="text-base text-white/60 max-w-2xl mx-auto">
+//               Harness the power of artificial intelligence to rank higher, drive
+//               more traffic, and accelerate business growth in the era of AI
+//               search.
+//             </p>
+//           </motion.div>
+//         </div>
+//       </div>
 
-      {/* Sticky pinned area */}
-      <div className="sticky top-16 h-screen w-full overflow-hidden flex items-center justify-center px-4">
-        <div className="w-full max-w-6xl relative h-full flex items-center justify-center">
-          {tabContents.map((item, i) => {
-            const IconComponent = item.icon;
-            return (
-              <motion.div
-                key={item.id}
-                className="absolute w-full max-w-5xl"
-                style={{
-                  y: transforms[i].y,
-                  opacity: transforms[i].opacity,
-                  scale: transforms[i].scale,
-                  zIndex: 10 + i,
-                }}
-              >
-                <div
-                  className={`w-full bg-gradient-to-br ${item.bg} rounded-3xl shadow-2xl overflow-hidden border border-white/10 backdrop-blur-sm p-8 md:p-12`}
-                >
-                  {/* Content Grid */}
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    {/* Left Content */}
-                    <motion.div
-                      className="flex flex-col"
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.2 }}
-                    >
-                      {/* Icon */}
-                      <motion.div
-                        className="w-16 h-16 rounded-2xl bg-gradient-to-br from-white/20 to-white/5 flex items-center justify-center mb-6 backdrop-blur-sm border border-white/10"
-                        whileHover={{ scale: 1.1, rotate: 5 }}
-                        transition={{ type: "spring", stiffness: 300 }}
+//       {/* Sticky pinned area */}
+//       <div className="sticky top-16 h-screen w-full overflow-hidden flex items-center justify-center px-4">
+//         <div className="w-full max-w-6xl relative h-full flex items-center justify-center">
+//           {tabContents.map((item, i) => {
+//             const IconComponent = item.icon;
+//             return (
+//               <motion.div
+//                 key={item.id}
+//                 className="absolute w-full max-w-5xl"
+//                 style={{
+//                   y: transforms[i].y,
+//                   opacity: transforms[i].opacity,
+//                   scale: transforms[i].scale,
+//                   zIndex: 10 + i,
+//                 }}
+//               >
+//                 <div
+//                   className={`w-full bg-gradient-to-br ${item.bg} rounded-3xl shadow-2xl overflow-hidden border border-white/10 backdrop-blur-sm p-8 md:p-12`}
+//                 >
+//                   {/* Content Grid */}
+//                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+//                     {/* Left Content */}
+//                     <motion.div
+//                       className="flex flex-col"
+//                       initial={{ opacity: 0, x: -20 }}
+//                       animate={{ opacity: 1, x: 0 }}
+//                       transition={{ delay: 0.2 }}
+//                     >
+//                       {/* Icon */}
+//                       <motion.div
+//                         className="w-16 h-16 rounded-2xl bg-gradient-to-br from-white/20 to-white/5 flex items-center justify-center mb-6 backdrop-blur-sm border border-white/10"
+//                         whileHover={{ scale: 1.1, rotate: 5 }}
+//                         transition={{ type: "spring", stiffness: 300 }}
+//                       >
+//                         <IconComponent
+//                           className="w-8 h-8"
+//                           style={{ color: item.accent }}
+//                         />
+//                       </motion.div>
+
+//                       {/* Title Section */}
+//                       <motion.p
+//                         className="text-sm md:text-base font-semibold uppercase tracking-widest mb-3"
+//                         style={{ color: item.accent }}
+//                         initial={{ opacity: 0, y: 10 }}
+//                         animate={{ opacity: 1, y: 0 }}
+//                         transition={{ delay: 0.3 }}
+//                       >
+//                         {item.subtitle}
+//                       </motion.p>
+
+//                       <motion.h3
+//                         className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight"
+//                         initial={{ opacity: 0, y: 10 }}
+//                         animate={{ opacity: 1, y: 0 }}
+//                         transition={{ delay: 0.4 }}
+//                       >
+//                         {item.title}
+//                       </motion.h3>
+
+//                       <motion.p
+//                         className="text-base md:text-lg text-white/80 leading-relaxed mb-8"
+//                         initial={{ opacity: 0, y: 10 }}
+//                         animate={{ opacity: 1, y: 0 }}
+//                         transition={{ delay: 0.5 }}
+//                       >
+//                         {item.description}
+//                       </motion.p>
+
+//                       {/* CTA Button */}
+//                       <motion.button
+//                         className="w-fit px-6 md:px-8 py-3 rounded-full font-semibold text-black transition-all hover:shadow-lg"
+//                         style={{ backgroundColor: item.accent }}
+//                         whileHover={{ scale: 1.05 }}
+//                         whileTap={{ scale: 0.98 }}
+//                         initial={{ opacity: 0, y: 10 }}
+//                         animate={{ opacity: 1, y: 0 }}
+//                         transition={{ delay: 0.6 }}
+//                       >
+//                         Learn More
+//                       </motion.button>
+//                     </motion.div>
+
+//                     {/* Right Content - Features & Metrics */}
+//                     <motion.div
+//                       className="flex flex-col gap-8"
+//                       initial={{ opacity: 0, x: 20 }}
+//                       animate={{ opacity: 1, x: 0 }}
+//                       transition={{ delay: 0.2 }}
+//                     >
+//                       {/* Features List */}
+//                       <div>
+//                         <h4 className="text-white font-semibold mb-4 flex items-center gap-2">
+//                           <Zap
+//                             className="w-5 h-5"
+//                             style={{ color: item.accent }}
+//                           />
+//                           Key Features
+//                         </h4>
+//                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+//                           {item.features.map((feature, idx) => (
+//                             <motion.div
+//                               key={idx}
+//                               className="flex items-start gap-3 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+//                               initial={{ opacity: 0, x: 10 }}
+//                               animate={{ opacity: 1, x: 0 }}
+//                               transition={{ delay: 0.6 + idx * 0.05 }}
+//                             >
+//                               <Target
+//                                 className="w-4 h-4 flex-shrink-0 mt-1"
+//                                 style={{ color: item.accent }}
+//                               />
+//                               <span className="text-sm text-white/80">
+//                                 {feature}
+//                               </span>
+//                             </motion.div>
+//                           ))}
+//                         </div>
+//                       </div>
+
+//                       {/* Metrics */}
+//                       <div>
+//                         <h4 className="text-white font-semibold mb-4 flex items-center gap-2">
+//                           <BarChart3
+//                             className="w-5 h-5"
+//                             style={{ color: item.accent }}
+//                           />
+//                           Results
+//                         </h4>
+//                         <div className="grid grid-cols-2 gap-4">
+//                           {item.metrics.map((metric, idx) => (
+//                             <MetricCard
+//                               key={idx}
+//                               label={metric.label}
+//                               value={metric.value}
+//                               accentColor={item.accent}
+//                             />
+//                           ))}
+//                         </div>
+//                       </div>
+//                     </motion.div>
+//                   </div>
+//                 </div>
+//               </motion.div>
+//             );
+//           })}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+
+
+
+
+return (
+  <section ref={containerRef} className="relative w-full pt-20">
+
+    {/* ====================== HEADER (SAME FOR ALL) ====================== */}
+    <div className="sticky top-0 z-50 backdrop-blur-md">
+      <div className="max-w-[80%] mx-auto px-4 py-6 border-b border-white/10">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center"
+        >
+          <p className="text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 uppercase tracking-widest mb-3">
+            Advanced AI SEO Solutions
+          </p>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-2">
+            Dominate AI-Powered Search
+          </h2>
+          <p className="text-base text-white/60 max-w-2xl mx-auto">
+            Harness the power of artificial intelligence to rank higher, drive
+            more traffic, and accelerate business growth in the era of AI
+            search.
+          </p>
+        </motion.div>
+      </div>
+    </div>
+
+    {/* ====================== MOBILE + MD (NORMAL SCROLL) ====================== */}
+    <div className="block lg:hidden px-4 py-16">
+      <div className="w-full max-w-4xl mx-auto space-y-10">
+        {tabContents.map((item) => {
+          const IconComponent = item.icon;
+
+          return (
+            <div
+              key={item.id}
+              className={`w-full bg-gradient-to-br ${item.bg} rounded-3xl shadow-2xl overflow-hidden border border-white/10 backdrop-blur-sm p-6 sm:p-8`}
+            >
+              <div className="flex flex-col gap-10">
+                {/* Icon */}
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-white/20 to-white/5 flex items-center justify-center backdrop-blur-sm border border-white/10">
+                  <IconComponent
+                    className="w-8 h-8"
+                    style={{ color: item.accent }}
+                  />
+                </div>
+
+                {/* Title */}
+                <div>
+                  <p
+                    className="text-sm font-semibold uppercase tracking-widest mb-3"
+                    style={{ color: item.accent }}
+                  >
+                    {item.subtitle}
+                  </p>
+
+                  <h3 className="text-3xl sm:text-4xl font-bold text-white mb-6 leading-tight">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-base text-white/80 leading-relaxed mb-6">
+                    {item.description}
+                  </p>
+
+                  <button
+                    className="w-fit px-6 py-3 rounded-full font-semibold text-black transition-all hover:shadow-lg"
+                    style={{ backgroundColor: item.accent }}
+                  >
+                    Learn More
+                  </button>
+                </div>
+
+                {/* Features */}
+                <div>
+                  <h4 className="text-white font-semibold mb-4 flex items-center gap-2">
+                    <Zap className="w-5 h-5" style={{ color: item.accent }} />
+                    Key Features
+                  </h4>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {item.features.map((feature, idx) => (
+                      <div
+                        key={idx}
+                        className="flex items-start gap-3 p-3 rounded-lg bg-white/5 border border-white/10"
                       >
-                        <IconComponent
-                          className="w-8 h-8"
+                        <Target
+                          className="w-4 h-4 flex-shrink-0 mt-1"
                           style={{ color: item.accent }}
                         />
-                      </motion.div>
-
-                      {/* Title Section */}
-                      <motion.p
-                        className="text-sm md:text-base font-semibold uppercase tracking-widest mb-3"
-                        style={{ color: item.accent }}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3 }}
-                      >
-                        {item.subtitle}
-                      </motion.p>
-
-                      <motion.h3
-                        className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight"
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4 }}
-                      >
-                        {item.title}
-                      </motion.h3>
-
-                      <motion.p
-                        className="text-base md:text-lg text-white/80 leading-relaxed mb-8"
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.5 }}
-                      >
-                        {item.description}
-                      </motion.p>
-
-                      {/* CTA Button */}
-                      <motion.button
-                        className="w-fit px-6 md:px-8 py-3 rounded-full font-semibold text-black transition-all hover:shadow-lg"
-                        style={{ backgroundColor: item.accent }}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.98 }}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.6 }}
-                      >
-                        Learn More
-                      </motion.button>
-                    </motion.div>
-
-                    {/* Right Content - Features & Metrics */}
-                    <motion.div
-                      className="flex flex-col gap-8"
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.2 }}
-                    >
-                      {/* Features List */}
-                      <div>
-                        <h4 className="text-white font-semibold mb-4 flex items-center gap-2">
-                          <Zap
-                            className="w-5 h-5"
-                            style={{ color: item.accent }}
-                          />
-                          Key Features
-                        </h4>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                          {item.features.map((feature, idx) => (
-                            <motion.div
-                              key={idx}
-                              className="flex items-start gap-3 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
-                              initial={{ opacity: 0, x: 10 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{ delay: 0.6 + idx * 0.05 }}
-                            >
-                              <Target
-                                className="w-4 h-4 flex-shrink-0 mt-1"
-                                style={{ color: item.accent }}
-                              />
-                              <span className="text-sm text-white/80">
-                                {feature}
-                              </span>
-                            </motion.div>
-                          ))}
-                        </div>
+                        <span className="text-sm text-white/80">
+                          {feature}
+                        </span>
                       </div>
-
-                      {/* Metrics */}
-                      <div>
-                        <h4 className="text-white font-semibold mb-4 flex items-center gap-2">
-                          <BarChart3
-                            className="w-5 h-5"
-                            style={{ color: item.accent }}
-                          />
-                          Results
-                        </h4>
-                        <div className="grid grid-cols-2 gap-4">
-                          {item.metrics.map((metric, idx) => (
-                            <MetricCard
-                              key={idx}
-                              label={metric.label}
-                              value={metric.value}
-                              accentColor={item.accent}
-                            />
-                          ))}
-                        </div>
-                      </div>
-                    </motion.div>
+                    ))}
                   </div>
                 </div>
-              </motion.div>
-            );
-          })}
-        </div>
+
+                {/* Metrics */}
+                <div>
+                  <h4 className="text-white font-semibold mb-4 flex items-center gap-2">
+                    <BarChart3
+                      className="w-5 h-5"
+                      style={{ color: item.accent }}
+                    />
+                    Results
+                  </h4>
+
+                  <div className="grid grid-cols-2 gap-4">
+                    {item.metrics.map((metric, idx) => (
+                      <div
+                        key={idx}
+                        className="flex flex-col items-center p-3 rounded-lg bg-white/5 border border-white/10"
+                      >
+                        <p className="text-xs text-white/60 text-center mb-2">
+                          {metric.label}
+                        </p>
+                        <p
+                          className="text-lg font-bold"
+                          style={{ color: item.accent }}
+                        >
+                          {metric.value}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </div>
-    </section>
-  );
+    </div>
+
+    {/* ====================== LG+ (YOUR ORIGINAL OVERLAY SCROLL) ====================== */}
+    <div className="hidden lg:block">
+      <section ref={containerRef} className="relative h-[350vh] w-full">
+        {/* Sticky pinned area */}
+        <div className="sticky top-16 h-screen w-full overflow-hidden flex items-center justify-center px-4">
+          <div className="w-full max-w-6xl relative h-full flex items-center justify-center">
+            {tabContents.map((item, i) => {
+              const IconComponent = item.icon;
+              return (
+                <motion.div
+                  key={item.id}
+                  className="absolute w-full max-w-5xl"
+                  style={{
+                    y: transforms[i].y,
+                    opacity: transforms[i].opacity,
+                    scale: transforms[i].scale,
+                    zIndex: 10 + i,
+                  }}
+                >
+                  <div
+                    className={`w-full bg-gradient-to-br ${item.bg} rounded-3xl shadow-2xl overflow-hidden border border-white/10 backdrop-blur-sm p-8 md:p-12`}
+                  >
+                    {/* Content Grid */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                      {/* Left Content */}
+                      <motion.div
+                        className="flex flex-col"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.2 }}
+                      >
+                        {/* Icon */}
+                        <motion.div
+                          className="w-16 h-16 rounded-2xl bg-gradient-to-br from-white/20 to-white/5 flex items-center justify-center mb-6 backdrop-blur-sm border border-white/10"
+                          whileHover={{ scale: 1.1, rotate: 5 }}
+                          transition={{ type: "spring", stiffness: 300 }}
+                        >
+                          <IconComponent
+                            className="w-8 h-8"
+                            style={{ color: item.accent }}
+                          />
+                        </motion.div>
+
+                        {/* Title Section */}
+                        <motion.p
+                          className="text-sm md:text-base font-semibold uppercase tracking-widest mb-3"
+                          style={{ color: item.accent }}
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.3 }}
+                        >
+                          {item.subtitle}
+                        </motion.p>
+
+                        <motion.h3
+                          className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight"
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.4 }}
+                        >
+                          {item.title}
+                        </motion.h3>
+
+                        <motion.p
+                          className="text-base md:text-lg text-white/80 leading-relaxed mb-8"
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.5 }}
+                        >
+                          {item.description}
+                        </motion.p>
+
+                        {/* CTA Button */}
+                        <motion.button
+                          className="w-fit px-6 md:px-8 py-3 rounded-full font-semibold text-black transition-all hover:shadow-lg"
+                          style={{ backgroundColor: item.accent }}
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.98 }}
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.6 }}
+                        >
+                          Learn More
+                        </motion.button>
+                      </motion.div>
+
+                      {/* Right Content - Features & Metrics */}
+                      <motion.div
+                        className="flex flex-col gap-8"
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.2 }}
+                      >
+                        {/* Features List */}
+                        <div>
+                          <h4 className="text-white font-semibold mb-4 flex items-center gap-2">
+                            <Zap
+                              className="w-5 h-5"
+                              style={{ color: item.accent }}
+                            />
+                            Key Features
+                          </h4>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            {item.features.map((feature, idx) => (
+                              <motion.div
+                                key={idx}
+                                className="flex items-start gap-3 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                                initial={{ opacity: 0, x: 10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.6 + idx * 0.05 }}
+                              >
+                                <Target
+                                  className="w-4 h-4 flex-shrink-0 mt-1"
+                                  style={{ color: item.accent }}
+                                />
+                                <span className="text-sm text-white/80">
+                                  {feature}
+                                </span>
+                              </motion.div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Metrics */}
+                        <div>
+                          <h4 className="text-white font-semibold mb-4 flex items-center gap-2">
+                            <BarChart3
+                              className="w-5 h-5"
+                              style={{ color: item.accent }}
+                            />
+                            Results
+                          </h4>
+                          <div className="grid grid-cols-2 gap-4">
+                            {item.metrics.map((metric, idx) => (
+                              <MetricCard
+                                key={idx}
+                                label={metric.label}
+                                value={metric.value}
+                                accentColor={item.accent}
+                              />
+                            ))}
+                          </div>
+                        </div>
+                      </motion.div>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+);
 }
