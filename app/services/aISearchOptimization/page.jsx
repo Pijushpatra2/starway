@@ -4,6 +4,8 @@ import InnerHero from "@/components/Common/InnerHero";
 import FinalServiceCTA from "@/components/Services/InnerServiceCTA";
 import WhyChooseCarousel from "@/components/Services/InnerWhyChooseUs";
 import { motion, AnimatePresence } from "framer-motion";
+import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 import {
   ArrowRight,
   Brain,
@@ -56,6 +58,7 @@ import {
   Code,
 } from "lucide-react";
 import { useState } from "react";
+import FaqAccordion from "@/components/FaqAccordion";
 
 export default function AiSearchPage() {
   const [activePlatform, setActivePlatform] = useState("chatgpt");
@@ -460,34 +463,39 @@ export default function AiSearchPage() {
     },
   ];
 
-  // FAQ
-  const faqs = [
-    {
-      question: "How is AI Search Optimization different from SEO?",
-      answer:
-        "Traditional SEO optimizes for link-based search ranking. AI Search Optimization focuses on entity recognition, brand authority, and being selected by AI as a trustworthy source for direct answers. It's about becoming an AI-recognized expert, not just ranking for keywords.",
-    },
-    {
-      question: "Will this replace traditional SEO?",
-      answer:
-        "No, they complement each other. Traditional SEO remains important for website traffic, while AI Search Optimization ensures visibility in AI-generated answers and next-generation search platforms. We recommend an integrated approach for complete search visibility.",
-    },
-    {
-      question: "How long does it take to see results?",
-      answer:
-        "Initial entity recognition improvements can appear within 4-6 weeks. Significant AI visibility and citation growth typically takes 3-6 months. The process involves building AI trust and authority, which develops over time through consistent optimization.",
-    },
-    {
-      question: "Can small businesses benefit?",
-      answer:
-        "Absolutely. AI search levels the playing field by focusing on expertise and authority rather than budget. Small businesses with clear expertise can achieve significant AI visibility faster than through traditional SEO competition.",
-    },
-    {
-      question: "Is this safe and future-proof?",
-      answer:
-        "Yes. Our methods focus on ethical authority building, quality content, and proper structured data—all practices that align with AI development trends. This creates sustainable visibility as AI search evolves.",
-    },
-  ];
+// AI Search Optimization FAQs
+const aiSearchFaqs = [
+  {
+    question: "What is AI Search Optimization?",
+    answer:
+      "AI Search Optimization focuses on optimizing your website and content so it can be discovered and referenced by AI-powered search engines, generative search tools, and AI assistants. It involves structured content, semantic SEO, and AI-friendly data architecture.",
+  },
+  {
+    question: "How is AI Search Optimization different from traditional SEO?",
+    answer:
+      "Traditional SEO focuses primarily on ranking in search engines like Google through keywords and backlinks. AI Search Optimization goes further by structuring content so AI systems can understand, summarize, and recommend your content within AI-generated responses and knowledge panels.",
+  },
+  {
+    question: "Which platforms benefit from AI Search Optimization?",
+    answer:
+      "AI Search Optimization helps improve visibility across emerging AI-driven discovery platforms, generative search experiences, AI assistants, and intelligent recommendation systems that analyze structured web content.",
+  },
+  {
+    question: "What strategies do you use for AI search optimization?",
+    answer:
+      "Our strategies include semantic content structuring, schema markup, knowledge graph optimization, entity-based SEO, high-authority content development, and technical improvements that help AI systems interpret your content more effectively.",
+  },
+  {
+    question: "Can AI Search Optimization improve website traffic?",
+    answer:
+      "Yes, by optimizing your content for AI-driven discovery systems, businesses can increase visibility, attract qualified audiences, and position their brand as a trusted source referenced by intelligent search systems.",
+  },
+  {
+    question: "How long does it take to see results from AI search optimization?",
+    answer:
+      "Results vary depending on the website, competition, and content strategy. However, most businesses start seeing improvements in search visibility and content discoverability within a few months of consistent optimization.",
+  },
+];
 
   return (
     <main className="min-h-screen">
@@ -1015,10 +1023,10 @@ export default function AiSearchPage() {
                             {activePlatform === "chatgpt"
                               ? "AI optimization"
                               : activePlatform === "gemini"
-                              ? "search visibility"
-                              : activePlatform === "copilot"
-                              ? "productivity tools"
-                              : "research methods"}
+                                ? "search visibility"
+                                : activePlatform === "copilot"
+                                  ? "productivity tools"
+                                  : "research methods"}
                             ?"
                           </div>
                         </div>
@@ -1055,33 +1063,35 @@ export default function AiSearchPage() {
       </section>
 
       {/* How AI Understands Brands - Interactive Process */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-primary">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-14 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-primary">
+        <div className="max-w-7xl mx-auto">
+          {/* HEADER */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12 lg:mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
               How AI Recognizes & Recommends Brands
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+
+            <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto">
               The cognitive process behind AI brand discovery
             </p>
           </motion.div>
 
-          {/* Interactive Process Steps */}
-          <div className="mb-12">
-            <div className="flex justify-center gap-4 mb-8">
+          {/* STEP BUTTONS */}
+          <div className="mb-10">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
               {aiUnderstanding.map((step, idx) => (
                 <button
                   key={idx}
                   onClick={() => setActiveStep(idx)}
-                  className={`px-6 py-3 rounded-xl font-medium transition-all ${
+                  className={`w-full px-4 sm:px-5 py-2.5 sm:py-3 text-sm sm:text-base rounded-xl font-medium transition-all text-center ${
                     activeStep === idx
-                      ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white"
+                      ? "bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-md"
                       : "bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-200"
                   }`}
                 >
@@ -1089,94 +1099,104 @@ export default function AiSearchPage() {
                 </button>
               ))}
             </div>
+          </div>
 
-            {/* Active Step Display */}
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeStep}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.3 }}
-                className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg"
-              >
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
-                        {(() => {
-                          const Icon = aiUnderstanding[activeStep].icon;
-                          return <Icon className="w-7 h-7 text-white" />;
-                        })()}
-                      </div>
-                      <div>
-                        <h3 className="text-2xl font-bold text-gray-900">
-                          {aiUnderstanding[activeStep].step}
-                        </h3>
-                        <p className="text-gray-600">
-                          {aiUnderstanding[activeStep].description}
-                        </p>
-                      </div>
+          {/* ACTIVE STEP CARD */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeStep}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="bg-white rounded-2xl p-5 sm:p-6 lg:p-8 border border-gray-200 shadow-lg"
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                {/* LEFT SIDE */}
+                <div>
+                  <div className="flex items-start sm:items-center gap-4 mb-6">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center flex-shrink-0">
+                      {(() => {
+                        const Icon = aiUnderstanding[activeStep].icon;
+                        return <Icon className="w-6 h-6 text-white" />;
+                      })()}
                     </div>
 
-                    <div className="mb-6">
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3">
-                        AI Processing Steps
-                      </h4>
-                      <div className="space-y-2">
-                        {aiUnderstanding[activeStep].process.map(
-                          (process, pIdx) => (
-                            <div key={pIdx} className="flex items-center gap-3">
-                              <div className="w-8 h-8 rounded-lg bg-gray-100 border border-gray-200 flex items-center justify-center">
-                                <span className="text-blue-600 font-bold">
-                                  {pIdx + 1}
-                                </span>
-                              </div>
-                              <span className="text-gray-700">{process}</span>
-                            </div>
-                          )
-                        )}
-                      </div>
+                    <div>
+                      <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
+                        {aiUnderstanding[activeStep].step}
+                      </h3>
+
+                      <p className="text-gray-600 text-sm sm:text-base">
+                        {aiUnderstanding[activeStep].description}
+                      </p>
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 border border-blue-200">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-4">
-                      Result
+                  {/* PROCESS */}
+                  <div>
+                    <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-3">
+                      AI Processing Steps
                     </h4>
-                    <div className="text-xl text-blue-600 mb-4">
-                      {aiUnderstanding[activeStep].outcome}
-                    </div>
 
-                    {/* AI Confidence Meter */}
-                    <div className="mt-8">
-                      <div className="flex justify-between text-sm text-gray-600 mb-2">
-                        <span>AI Confidence Level</span>
-                        <span>{85 + activeStep * 5}%</span>
-                      </div>
-                      <div className="w-full bg-gray-200 rounded-full h-3">
-                        <div
-                          className="bg-gradient-to-r from-blue-500 to-cyan-500 h-3 rounded-full"
-                          style={{ width: `${85 + activeStep * 5}%` }}
-                        ></div>
-                      </div>
-                    </div>
+                    <div className="space-y-3">
+                      {aiUnderstanding[activeStep].process.map(
+                        (process, pIdx) => (
+                          <div key={pIdx} className="flex items-start gap-3">
+                            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gray-100 border border-gray-200 flex items-center justify-center flex-shrink-0">
+                              <span className="text-blue-600 font-bold text-sm">
+                                {pIdx + 1}
+                              </span>
+                            </div>
 
-                    {/* Brand Recognition Indicator */}
-                    <div className="mt-6">
-                      <div className="flex items-center gap-2 text-gray-700">
-                        <Brain className="w-4 h-4" />
-                        <span>
-                          Brand Recognition:{" "}
-                          {activeStep >= 2 ? "✓ Established" : "Building..."}
-                        </span>
-                      </div>
+                            <span className="text-gray-700 text-sm sm:text-base">
+                              {process}
+                            </span>
+                          </div>
+                        ),
+                      )}
                     </div>
                   </div>
                 </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
+
+                {/* RIGHT SIDE */}
+                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-5 sm:p-6 border border-blue-200">
+                  <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-4">
+                    Result
+                  </h4>
+
+                  <div className="text-lg sm:text-xl text-blue-600 mb-4">
+                    {aiUnderstanding[activeStep].outcome}
+                  </div>
+
+                  {/* CONFIDENCE BAR */}
+                  <div className="mt-6">
+                    <div className="flex justify-between text-sm text-gray-600 mb-2">
+                      <span>AI Confidence Level</span>
+                      <span>{85 + activeStep * 5}%</span>
+                    </div>
+
+                    <div className="w-full bg-gray-200 rounded-full h-2.5 sm:h-3">
+                      <div
+                        className="bg-gradient-to-r from-blue-500 to-cyan-500 h-2.5 sm:h-3 rounded-full transition-all duration-500"
+                        style={{ width: `${85 + activeStep * 5}%` }}
+                      ></div>
+                    </div>
+                  </div>
+
+                  {/* BRAND STATUS */}
+                  <div className="mt-6 flex items-center gap-2 text-sm sm:text-base text-gray-700">
+                    <Brain className="w-4 h-4" />
+
+                    <span>
+                      Brand Recognition:
+                      {activeStep >= 2 ? " ✓ Established" : " Building..."}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </section>
 
@@ -1273,59 +1293,86 @@ export default function AiSearchPage() {
               })}
             </div>
 
-            {/* Mobile View (Horizontal Scroll) */}
-            <div className="lg:hidden flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory">
-              {process.map((step, idx) => {
-                const Icon = step.icon;
+{/* Mobile View (Carousel) */}
+<div className="lg:hidden">
 
-                return (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4 }}
-                    viewport={{ once: true }}
-                    className="min-w-[280px] snap-center"
-                  >
-                    <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
-                      <div className="flex justify-between items-center mb-4">
-                        <span className="text-sm font-bold text-blue-600">
-                          Step {step.step}
-                        </span>
-                        <span className="text-xs text-gray-500">
-                          {step.duration}
-                        </span>
-                      </div>
+  <Swiper
+    modules={[Pagination]}
+    spaceBetween={16}
+    slidesPerView={1.1}
+    pagination={{ clickable: true }}
+    breakpoints={{
+      480: {
+        slidesPerView: 1.2,
+      },
+      640: {
+        slidesPerView: 1.4,
+      },
+    }}
+  >
 
-                      <div
-                        className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-50 to-cyan-50
-                                    flex items-center justify-center mb-4 border border-blue-100"
-                      >
-                        <Icon className="w-6 h-6 text-blue-600" />
-                      </div>
+    {process.map((step, idx) => {
+      const Icon = step.icon;
 
-                      <h3 className="text-lg font-bold text-gray-900 mb-2">
-                        {step.title}
-                      </h3>
-                      <p className="text-gray-600 text-sm mb-4">
-                        {step.description}
-                      </p>
+      return (
+        <SwiperSlide key={idx}>
 
-                      <div className="space-y-2">
-                        {step.activities.slice(0, 2).map((activity, i) => (
-                          <div key={i} className="flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                            <span className="text-xs text-gray-700">
-                              {activity}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4 }}
+            viewport={{ once: true }}
+          >
+
+            <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm h-full">
+
+              {/* Step Header */}
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-sm font-bold text-blue-600">
+                  Step {step.step}
+                </span>
+                <span className="text-xs text-gray-500">
+                  {step.duration}
+                </span>
+              </div>
+
+              {/* Icon */}
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-50 to-cyan-50 flex items-center justify-center mb-4 border border-blue-100">
+                <Icon className="w-6 h-6 text-blue-600" />
+              </div>
+
+              {/* Content */}
+              <h3 className="text-lg font-bold text-gray-900 mb-2">
+                {step.title}
+              </h3>
+
+              <p className="text-gray-600 text-sm mb-4">
+                {step.description}
+              </p>
+
+              {/* Activities */}
+              <div className="space-y-2">
+                {step.activities.slice(0, 2).map((activity, i) => (
+                  <div key={i} className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                    <span className="text-xs text-gray-700">
+                      {activity}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
             </div>
+
+          </motion.div>
+
+        </SwiperSlide>
+      );
+    })}
+
+  </Swiper>
+
+</div>
           </div>
         </div>
       </section>
@@ -1495,62 +1542,14 @@ export default function AiSearchPage() {
         </div>
       </section>
 
-      {/* FAQs - AI Focus */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-primary">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              AI Optimization FAQs
-            </h2>
-            <p className="text-xl text-gray-300">
-              Understanding the future of search
-            </p>
-          </motion.div>
-
-          <div className="space-y-6">
-            {faqs.map((faq, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: idx * 0.1 }}
-                viewport={{ once: true }}
-                className="group"
-              >
-                <div className="bg-white rounded-2xl p-8 border border-gray-200 hover:border-blue-500/50 hover:shadow-lg transition-all shadow-sm">
-                  <div className="flex items-start gap-6">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-50 to-cyan-50 flex items-center justify-center border border-blue-100 flex-shrink-0">
-                      <div className="text-blue-600 font-bold text-lg">?</div>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                        {faq.question}
-                      </h3>
-                      <div className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center border border-green-200 flex-shrink-0 mt-1">
-                          <span className="text-green-600 font-bold text-sm">
-                            A
-                          </span>
-                        </div>
-                        <p className="text-gray-600 leading-relaxed">
-                          {faq.answer}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+{/* FAQs */}
+<FaqAccordion
+  title="AI Search Optimization FAQs"
+  subtitle="Find answers to common questions about optimizing your website for AI-powered search engines, generative search results, and intelligent discovery platforms."
+  linkText="Want to improve your visibility in AI search results? Talk with our AI SEO experts."
+  linkHref="/contact"
+  faqs={aiSearchFaqs}
+/>
       {/* Final CTA - Futuristic */}
       <FinalServiceCTA
         icon={BrainCircuit}

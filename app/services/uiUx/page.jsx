@@ -9,52 +9,24 @@ import {
   TrendingUp,
   Users,
   Eye,
-  MousePointer,
   Zap,
   Layout,
   Palette,
-  Smartphone,
-  Monitor,
   Filter,
   Shield,
   BarChart,
-  Clock,
-  Award,
-  MessageSquare,
-  FileText,
-  Settings,
   Search,
-  Calendar,
   Phone,
-  ChevronRight,
-  Download,
   MessageCircle,
-  Play,
-  Building,
-  Store,
   ShoppingBag,
-  HeartPulse,
-  Home,
   PenTool,
   Layers,
   PieChart,
-  LineChart,
-  BookOpen,
-  Type,
-  Quote,
-  ClipboardCheck,
-  GraduationCap,
-  Globe,
-  Brain,
-  Lightbulb,
   CheckSquare,
   XCircle,
-  Grid,
-  Navigation,
   Sparkles,
   UserCheck,
   ThumbsUp,
-  ArrowUpRight,
   Cpu,
   Code,
   MousePointerClick,
@@ -69,6 +41,7 @@ import DesignExperiences from "@/components/Services/DesignExperiences";
 import DesignImpactTabs from "@/components/Services/DesignImpactTabs";
 import WhyChooseCarousel from "@/components/Services/InnerWhyChooseUs";
 import FinalServiceCTA from "@/components/Services/InnerServiceCTA";
+import FaqAccordion from "@/components/FaqAccordion";
 
 export default function UiUxPage() {
   const [activePlatform, setActivePlatform] = useState("web");
@@ -258,191 +231,6 @@ export default function UiUxPage() {
     },
   ];
 
-  const impactByAudience = [
-    {
-      title: "Product-First Startups",
-      description:
-        "Early-stage teams validating ideas and accelerating adoption",
-      icon: Rocket,
-      impact: [
-        {
-          metric: "38%",
-          label: "Higher Conversions",
-          reason: "Clear value propositions and focused user journeys",
-        },
-        {
-          metric: "52%",
-          label: "Lower Bounce Rate",
-          reason: "Simplified flows and fast clarity for new users",
-        },
-        {
-          metric: "Faster MVP Iterations",
-          label: "Reduced Rework",
-          reason: "Design-led feedback loops and usability testing",
-        },
-      ],
-      outcomes: [
-        "Stronger product-market fit",
-        "Faster investor validation",
-        "Improved early user retention",
-      ],
-    },
-    {
-      title: "SaaS & Tech Platforms",
-      description: "Feature-rich products requiring clarity and scalability",
-      icon: Cpu,
-      impact: [
-        {
-          metric: "45%",
-          label: "Faster Task Completion",
-          reason: "Optimized workflows and intuitive dashboards",
-        },
-        {
-          metric: "4.8/5",
-          label: "User Satisfaction",
-          reason: "Predictable interactions and reduced cognitive load",
-        },
-        {
-          metric: "30%",
-          label: "Higher Feature Adoption",
-          reason: "Better onboarding and in-context discovery",
-        },
-      ],
-      outcomes: [
-        "Lower support dependency",
-        "Higher retention rates",
-        "Improved product stickiness",
-      ],
-    },
-    {
-      title: "E-commerce Brands",
-      description: "Conversion-focused online stores and marketplaces",
-      icon: ShoppingBag,
-      impact: [
-        {
-          metric: "34%",
-          label: "Higher Checkout Completion",
-          reason: "Frictionless checkout and trust-driven UI",
-        },
-        {
-          metric: "41%",
-          label: "Lower Cart Abandonment",
-          reason: "Clear pricing, CTAs, and mobile-first layouts",
-        },
-        {
-          metric: "Higher AOV",
-          label: "Revenue Growth",
-          reason: "Better product discovery and upsell placement",
-        },
-      ],
-      outcomes: [
-        "Increased revenue per visitor",
-        "Stronger mobile conversions",
-        "Improved repeat purchases",
-      ],
-    },
-    {
-      title: "Website Redesigns",
-      description: "Businesses modernizing outdated digital experiences",
-      icon: RefreshCw,
-      impact: [
-        {
-          metric: "62%",
-          label: "Lower Bounce Rates",
-          reason: "Modern layouts with clear information hierarchy",
-        },
-        {
-          metric: "Stronger Brand Trust",
-          label: "Improved Perception",
-          reason: "Consistent visuals and professional UI standards",
-        },
-        {
-          metric: "More Leads",
-          label: "Higher Engagement",
-          reason: "Conversion-focused page structures",
-        },
-      ],
-      outcomes: [
-        "Improved engagement metrics",
-        "Higher lead quality",
-        "Long-term scalability",
-      ],
-    },
-  ];
-
-  // Expected outcomes - Interactive cards
-  const outcomes = [
-    {
-      metric: "34%",
-      title: "Higher Conversion Rates",
-      description: "Strategic design decisions that drive user actions",
-      icon: TrendingUp,
-      details: ["Form submissions", "Checkout completions", "Lead generation"],
-    },
-    {
-      metric: "62%",
-      title: "Lower Bounce Rates",
-      description: "Engaging interfaces that keep users exploring",
-      icon: ArrowDown,
-      details: ["Longer sessions", "More page views", "Lower exit rates"],
-    },
-    {
-      metric: "4.8/5",
-      title: "User Satisfaction",
-      description: "Intuitive experiences that users love to use",
-      icon: ThumbsUp,
-      details: ["NPS scores", "User reviews", "Retention rates"],
-    },
-    {
-      metric: "45%",
-      title: "Faster Task Completion",
-      description: "Streamlined workflows that save users time",
-      icon: Zap,
-      details: ["Reduced clicks", "Simplified forms", "Quick navigation"],
-    },
-  ];
-
-  // Who it's best for
-  const targetAudiences = [
-    {
-      title: "Product-First Startups",
-      description: "New ventures needing user-centric design foundations",
-      icon: Rocket,
-      focus: ["User acquisition", "Product-market fit", "Scalable design"],
-      results: ["MVP design", "User testing", "Iteration cycles"],
-    },
-    {
-      title: "SaaS & Tech Platforms",
-      description: "Complex interfaces requiring intuitive user experiences",
-      icon: Cpu,
-      focus: ["Dashboard design", "Feature discovery", "User onboarding"],
-      results: [
-        "Reduced support tickets",
-        "Higher feature adoption",
-        "Better retention",
-      ],
-    },
-    {
-      title: "E-commerce Brands",
-      description: "Online stores optimizing for conversions and sales",
-      icon: ShoppingBag,
-      focus: ["Checkout optimization", "Product discovery", "Mobile shopping"],
-      results: [
-        "Higher AOV",
-        "Lower cart abandonment",
-        "Better mobile conversion",
-      ],
-    },
-    {
-      title: "Website Redesigns",
-      description:
-        "Existing websites needing modern, conversion-focused updates",
-      icon: RefreshCw,
-      focus: ["Modernization", "Conversion optimization", "Brand alignment"],
-      results: ["Improved metrics", "Better engagement", "Higher conversions"],
-    },
-  ];
-
   // Why choose us
   const uiuxWhyChoose = [
     {
@@ -518,33 +306,39 @@ export default function UiUxPage() {
   ];
 
   // FAQ
-  const faqs = [
-    {
-      question: "What's the difference between UI and UX?",
-      answer:
-        "UX (User Experience) focuses on the overall user journey, usability, and how the product feels. UI (User Interface) focuses on the visual design, layout, and interactive elements. We excel at both - creating beautiful interfaces (UI) that provide exceptional experiences (UX).",
-    },
-    {
-      question: "How long does UI/UX design take?",
-      answer:
-        "Timeline depends on project scope. A complete website redesign typically takes 8-12 weeks. Mobile apps take 12-16 weeks. We work in iterative sprints, delivering value at each stage and providing regular updates throughout the process.",
-    },
-    {
-      question: "Will this actually improve conversions?",
-      answer:
-        "Absolutely. Every design decision we make is backed by conversion optimization principles. Our clients typically see 25-40% improvements in key conversion metrics. We track and measure results to ensure designs deliver real business value.",
-    },
-    {
-      question: "Do you work with existing developers?",
-      answer:
-        "Yes! We specialize in collaborative workflows. We provide detailed design specs, component libraries, and regular syncs with development teams. Our handoff process includes everything developers need for smooth implementation.",
-    },
-    {
-      question: "Can you redesign an existing product?",
-      answer:
-        "Definitely. We start with a comprehensive audit of your current design, identifying pain points and opportunities. Our redesigns preserve what works while modernizing and optimizing for better performance and conversions.",
-    },
-  ];
+// UI/UX FAQs
+const uiuxFaqs = [
+  {
+    question: "What is the difference between UI and UX design?",
+    answer:
+      "UX (User Experience) focuses on how users interact with a product and how easily they can achieve their goals, while UI (User Interface) focuses on the visual elements such as layout, colors, typography, and components. Together, UI and UX create intuitive, engaging, and effective digital experiences.",
+  },
+  {
+    question: "Do you provide UX research before starting the design?",
+    answer:
+      "Yes, our design process begins with user research, competitor analysis, and product strategy. This helps us understand user behavior, identify pain points, and create design solutions that improve usability and conversion rates.",
+  },
+  {
+    question: "Can you redesign an existing website or application?",
+    answer:
+      "Absolutely. We specialize in redesigning outdated websites and applications to improve usability, visual appeal, and performance. Our redesign process focuses on modern UI patterns, better user flows, and improved engagement.",
+  },
+  {
+    question: "Do you create design systems for scalable products?",
+    answer:
+      "Yes, we build scalable design systems that include reusable UI components, typography rules, color systems, and interaction guidelines. This ensures design consistency and faster development for future features.",
+  },
+  {
+    question: "Will the design be mobile-friendly and responsive?",
+    answer:
+      "Yes, all our designs follow a mobile-first approach. We ensure that interfaces work seamlessly across desktops, tablets, and mobile devices to deliver a consistent and optimized user experience.",
+  },
+  {
+    question: "Do you also support developers during implementation?",
+    answer:
+      "Yes, we collaborate closely with development teams by providing detailed design specifications, prototypes, and design assets. This ensures the final product matches the design vision and maintains a high-quality user experience.",
+  },
+];
 
   return (
     <main className="min-h-screen bg-white">
@@ -902,10 +696,6 @@ export default function UiUxPage() {
                           Stage {step.step}
                         </span>
 
-                        <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center mb-4">
-                          <Icon className="w-6 h-6 text-blue-600" />
-                        </div>
-
                         <h3 className="text-lg font-bold text-gray-900 mb-2">
                           {step.title}
                         </h3>
@@ -1002,190 +792,165 @@ export default function UiUxPage() {
       <DesignImpactTabs />
 
       {/* Case Studies - Before/After Slider */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-primary">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Design Transformation Stories
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Real design improvements that delivered measurable results
-            </p>
-          </motion.div>
+<section className="py-14 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-primary">
+  <div className="max-w-7xl mx-auto">
 
-          <div className="space-y-12">
-            {caseStudies.map((study, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: idx * 0.2 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8 border border-gray-200 hover:shadow-lg transition-all"
-              >
-                <div className="grid md:grid-cols-3 gap-8">
-                  {/* Before */}
-                  <div className="text-center">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6">
-                      <XCircle className="w-4 h-4" />
-                      Before Redesign
-                    </div>
-                    <div className="space-y-4">
-                      <div>
-                        <div className="text-2xl font-bold text-gray-400">
-                          {study.beforeMetrics.usability}
-                        </div>
-                        <div className="text-gray-500 text-sm">
-                          Usability Score
-                        </div>
-                      </div>
-                      <div>
-                        <div className="text-2xl font-bold text-gray-400">
-                          {study.beforeMetrics.completion}
-                        </div>
-                        <div className="text-gray-500 text-sm">
-                          Task Completion
-                        </div>
-                      </div>
-                      <div>
-                        <div className="text-2xl font-bold text-gray-400">
-                          {study.beforeMetrics.time}
-                        </div>
-                        <div className="text-gray-500 text-sm">
-                          Average Time
-                        </div>
-                      </div>
-                    </div>
+    {/* HEADER */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="text-center mb-12 lg:mb-16"
+    >
+      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
+        Design Transformation Stories
+      </h2>
+
+      <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto">
+        Real design improvements that delivered measurable results
+      </p>
+    </motion.div>
+
+    {/* CASE STUDIES */}
+    <div className="space-y-8 lg:space-y-12">
+      {caseStudies.map((study, idx) => (
+        <motion.div
+          key={idx}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: idx * 0.15 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-2xl p-5 sm:p-6 lg:p-8 border border-gray-200 hover:shadow-xl transition-all"
+        >
+
+          {/* GRID */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center">
+
+            {/* BEFORE */}
+            <div className="text-center md:text-left lg:text-center">
+
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gray-100 text-gray-700 text-xs sm:text-sm font-medium mb-5">
+                <XCircle className="w-4 h-4" />
+                Before Redesign
+              </div>
+
+              <div className="grid grid-cols-3 md:grid-cols-1 gap-4">
+                <div>
+                  <div className="text-xl sm:text-2xl font-bold text-gray-400">
+                    {study.beforeMetrics.usability}
                   </div>
-
-                  {/* Case Study Info */}
-                  <div className="text-center">
-                    <div className="mb-6">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                        {study.client}
-                      </h3>
-                      <div className="text-gray-600 text-sm mb-4">
-                        <strong>Challenge:</strong> {study.challenge}
-                      </div>
-                      <div className="text-gray-700">
-                        <strong>Solution:</strong> {study.solution}
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      {study.results.map((result, rIdx) => (
-                        <div
-                          key={rIdx}
-                          className="flex items-center justify-center gap-2"
-                        >
-                          <TrendingUp className="w-4 h-4 text-green-500" />
-                          <span className="text-gray-700">{result}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* After */}
-                  <div className="text-center">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-green-100 to-emerald-100 text-green-700 text-sm font-medium mb-6">
-                      <CheckSquare className="w-4 h-4" />
-                      After Redesign
-                    </div>
-                    <div className="space-y-4">
-                      <div>
-                        <div className="text-2xl font-bold text-green-600">
-                          {study.afterMetrics.usability}
-                        </div>
-                        <div className="text-green-700 text-sm font-medium">
-                          Usability Score
-                        </div>
-                      </div>
-                      <div>
-                        <div className="text-2xl font-bold text-green-600">
-                          {study.afterMetrics.completion}
-                        </div>
-                        <div className="text-green-700 text-sm font-medium">
-                          Task Completion
-                        </div>
-                      </div>
-                      <div>
-                        <div className="text-2xl font-bold text-green-600">
-                          {study.afterMetrics.time}
-                        </div>
-                        <div className="text-green-700 text-sm font-medium">
-                          Average Time
-                        </div>
-                      </div>
-                    </div>
+                  <div className="text-gray-500 text-xs sm:text-sm">
+                    Usability Score
                   </div>
                 </div>
-              </motion.div>
-            ))}
+
+                <div>
+                  <div className="text-xl sm:text-2xl font-bold text-gray-400">
+                    {study.beforeMetrics.completion}
+                  </div>
+                  <div className="text-gray-500 text-xs sm:text-sm">
+                    Task Completion
+                  </div>
+                </div>
+
+                <div>
+                  <div className="text-xl sm:text-2xl font-bold text-gray-400">
+                    {study.beforeMetrics.time}
+                  </div>
+                  <div className="text-gray-500 text-xs sm:text-sm">
+                    Average Time
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* CASE STUDY INFO */}
+            <div className="text-center px-2 sm:px-4">
+
+              <div className="mb-5">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
+                  {study.client}
+                </h3>
+
+                <p className="text-gray-600 text-sm sm:text-base mb-3">
+                  <strong>Challenge:</strong> {study.challenge}
+                </p>
+
+                <p className="text-gray-700 text-sm sm:text-base">
+                  <strong>Solution:</strong> {study.solution}
+                </p>
+              </div>
+
+              <div className="space-y-2">
+                {study.results.map((result, rIdx) => (
+                  <div
+                    key={rIdx}
+                    className="flex items-center justify-center gap-2 text-sm sm:text-base"
+                  >
+                    <TrendingUp className="w-4 h-4 text-green-500" />
+                    <span className="text-gray-700">{result}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* AFTER */}
+            <div className="text-center md:text-left lg:text-center">
+
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-green-100 to-emerald-100 text-green-700 text-xs sm:text-sm font-medium mb-5">
+                <CheckSquare className="w-4 h-4" />
+                After Redesign
+              </div>
+
+              <div className="grid grid-cols-3 md:grid-cols-1 gap-4">
+
+                <div>
+                  <div className="text-xl sm:text-2xl font-bold text-green-600">
+                    {study.afterMetrics.usability}
+                  </div>
+                  <div className="text-green-700 text-xs sm:text-sm font-medium">
+                    Usability Score
+                  </div>
+                </div>
+
+                <div>
+                  <div className="text-xl sm:text-2xl font-bold text-green-600">
+                    {study.afterMetrics.completion}
+                  </div>
+                  <div className="text-green-700 text-xs sm:text-sm font-medium">
+                    Task Completion
+                  </div>
+                </div>
+
+                <div>
+                  <div className="text-xl sm:text-2xl font-bold text-green-600">
+                    {study.afterMetrics.time}
+                  </div>
+                  <div className="text-green-700 text-xs sm:text-sm font-medium">
+                    Average Time
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
           </div>
-        </div>
-      </section>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* FAQs */}
-      {/* <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Design & Conversion FAQs
-            </h2>
-            <p className="text-xl text-gray-600">
-              Everything you need to know about UI/UX design
-            </p>
-          </motion.div>
-
-          <div className="space-y-6">
-            {faqs.map((faq, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: idx * 0.1 }}
-                viewport={{ once: true }}
-                className="group"
-              >
-                <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-8 border border-purple-100 hover:border-purple-300 hover:shadow-lg transition-all">
-                  <div className="flex items-start gap-6">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center flex-shrink-0">
-                      <div className="text-purple-600 font-bold text-lg">?</div>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                        {faq.question}
-                      </h3>
-                      <div className="flex items-start gap-4">
-                        <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-1">
-                          <span className="text-green-600 font-bold text-sm">
-                            A
-                          </span>
-                        </div>
-                        <p className="text-gray-600 leading-relaxed">
-                          {faq.answer}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section> */}
+{/* FAQs */}
+<FaqAccordion
+  title="UI/UX Design FAQs"
+  subtitle="Get answers to common questions about our UI/UX design process, user research, design systems, and product experience strategy."
+  linkText="Have more questions? Talk with our UX specialists."
+  linkHref="/contact"
+  faqs={uiuxFaqs}
+/>
 
       {/* Final CTA */}
       <FinalServiceCTA

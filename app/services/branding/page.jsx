@@ -1,6 +1,7 @@
 "use client";
 
 import InnerHero from "@/components/Common/InnerHero";
+import FaqAccordion from "@/components/FaqAccordion";
 import FinalServiceCTA from "@/components/Services/InnerServiceCTA";
 import { motion } from "framer-motion";
 import {
@@ -262,6 +263,39 @@ export default function BrandingPage() {
       ],
     },
   ];
+  // Branding FAQs
+const brandingFaqs = [
+  {
+    question: "What does branding include?",
+    answer:
+      "Branding includes the development of your brand strategy, logo design, visual identity, typography, color palette, brand voice, and guidelines. Our goal is to create a consistent and memorable brand presence that connects with your target audience.",
+  },
+  {
+    question: "Why is branding important for a business?",
+    answer:
+      "Strong branding helps businesses build trust, recognition, and credibility in the market. A well-defined brand makes it easier for customers to understand your values, differentiate you from competitors, and remember your business.",
+  },
+  {
+    question: "Do you create custom logos and brand identities?",
+    answer:
+      "Yes, we design custom logos and complete brand identity systems tailored to your business vision and industry. Every element is carefully crafted to ensure your brand stands out and communicates the right message.",
+  },
+  {
+    question: "Will I receive brand guidelines after the project?",
+    answer:
+      "Yes, we provide comprehensive brand guidelines that include logo usage, color systems, typography, spacing rules, and design standards. This ensures your brand remains consistent across all digital and marketing platforms.",
+  },
+  {
+    question: "Can you rebrand an existing business?",
+    answer:
+      "Absolutely. We help businesses refresh or completely transform their brand identity to better align with their growth, target audience, and evolving market trends.",
+  },
+  {
+    question: "How long does a branding project take?",
+    answer:
+      "Branding timelines depend on the scope of the project. A typical branding project may take between 3–6 weeks, including research, concept development, revisions, and final brand asset delivery.",
+  },
+];
 
   return (
     <main className="min-h-screen bg-white">
@@ -695,6 +729,8 @@ export default function BrandingPage() {
         </div>
       </section>
 
+
+
       {/* Case Studies */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#255EC8]">
         <div className="max-w-7xl mx-auto">
@@ -775,7 +811,14 @@ export default function BrandingPage() {
           </div>
         </div>
       </section>
-
+      {/* FAQs */}
+<FaqAccordion
+  title="Branding Services FAQs"
+  subtitle="Find answers to common questions about our branding strategy, brand identity design, and how we help businesses build memorable and impactful brands."
+  linkText="Want to build a powerful brand? Speak with our branding experts."
+  linkHref="/contact"
+  faqs={brandingFaqs}
+/>
       {/* Call to Action */}
       <FinalServiceCTA
         icon={Palette}

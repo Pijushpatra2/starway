@@ -2,39 +2,22 @@
 
 import InnerHero from "@/components/Common/InnerHero";
 import { motion } from "framer-motion";
-import { 
-  ArrowRight, 
+import {  
   CheckCircle, 
   Target, 
   TrendingUp, 
   BarChart,
-  Zap,
   Search,
   MapPin,
-  Globe,
   Shield,
   Users,
-  Eye,
   Clock,
-  Award,
   TrendingDown,
-  LineChart,
-  PieChart,
-  Filter,
-  Settings,
-  FileText,
-  Calendar,
-  MessageSquare,
   Phone,
-  ChevronRight,
-  Download,
   MessageCircle,
-  Play,
   Building,
-  Store,
   ShoppingBag,
   HeartPulse,
-  Utensils,
   Home,
   Search as SearchIcon,
   Target as TargetIcon,
@@ -46,8 +29,6 @@ import {
   Globe as GlobeIcon,
   MapPin as MapPinIcon,
   BarChart as BarChartIcon,
-  CheckSquare,
-  XCircle
 } from "lucide-react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
@@ -557,7 +538,6 @@ export default function SeoPage() {
         </div>
       </section>
 
-      {/* Why SEO Is Critical - Search Pyramid */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div

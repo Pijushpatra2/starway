@@ -93,7 +93,7 @@ export default function FinalServiceCTA({
                 </div>
 
                 {/* Challenges */}
-                <div>
+                <div className="hidden md:block">
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Your Biggest Challenge
                   </label>

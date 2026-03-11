@@ -51,13 +51,13 @@ export default function InnerHero({
         )}
 
         {/* Title */}
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
+        <h1 className=" text-2xl sm:text-3xl md:text-3xl lg:text-5xl 2xl:text-6xl  font-bold text-white mb-4 leading-tight">
           {title}
         </h1>
 
         {/* Subtitle */}
         {subtitle && (
-          <p className="text-lg md:text-xl lg:text-2xl text-blue-100 max-w-3xl leading-relaxed">
+          <p className="text-lg md:text-xl lg:text-xl 2xl:text-2xl text-blue-100 max-w-3xl leading-relaxed">
             {subtitle}
           </p>
         )}

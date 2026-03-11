@@ -1,11 +1,11 @@
 "use client";
 
 import InnerHero from "@/components/Common/InnerHero";
+import FaqAccordion from "@/components/FaqAccordion";
 import FinalServiceCTA from "@/components/Services/InnerServiceCTA";
 import WhyChooseCarousel from "@/components/Services/InnerWhyChooseUs";
 import { motion } from "framer-motion";
 import {
-  ArrowRight,
   CheckCircle,
   Target,
   TrendingUp,
@@ -255,78 +255,39 @@ export default function PpcPage() {
   ];
 
   // FAQ
-  const faqs = [
-    {
-      question: "How quickly can I see results?",
-      answer:
-        "Most campaigns start generating traffic within 24 hours. Initial conversions typically begin within 3-7 days, with optimized performance ramping up over the first 30 days.",
-    },
-    {
-      question: "What's your minimum budget?",
-      answer:
-        "We recommend starting with at least $1,500/month for meaningful results. This allows proper testing and optimization across platforms while generating sufficient data for informed decisions.",
-    },
-    {
-      question: "How do you track ROI?",
-      answer:
-        "We implement comprehensive tracking including conversion pixels, UTM parameters, and Google Analytics 4. You'll receive detailed reports showing cost per conversion, ROAS, and full-funnel attribution.",
-    },
-    {
-      question: "Do you manage landing pages?",
-      answer:
-        "Yes, we offer landing page optimization as part of our service. High-converting landing pages are essential for PPC success, and we ensure yours are properly structured for maximum conversions.",
-    },
-  ];
-
-  // Service tiers
-  const serviceTiers = [
-    {
-      name: "Starter",
-      price: "$1,500",
-      period: "/month",
-      bestFor: "New to PPC or testing campaigns",
-      features: [
-        "Single Platform Management",
-        "Up to 3 Campaigns",
-        "Weekly Optimization",
-        "Monthly Reporting",
-        "Basic Conversion Tracking",
-        "Email Support",
-      ],
-    },
-    {
-      name: "Growth",
-      price: "$2,500",
-      period: "/month",
-      bestFor: "Growing businesses scaling results",
-      features: [
-        "2 Platform Management",
-        "Up to 8 Campaigns",
-        "Daily Optimization",
-        "Bi-weekly Reporting",
-        "Advanced Tracking",
-        "Phone & Email Support",
-        "A/B Testing",
-      ],
-      popular: true,
-    },
-    {
-      name: "Enterprise",
-      price: "$4,500",
-      period: "/month",
-      bestFor: "Established brands maximizing ROI",
-      features: [
-        "Multi-Platform Management",
-        "Unlimited Campaigns",
-        "Real-time Optimization",
-        "Weekly Strategy Calls",
-        "Full-funnel Attribution",
-        "Priority Support",
-        "Competitive Analysis",
-        "Custom Integration",
-      ],
-    },
-  ];
+// PPC FAQs
+const ppcFaqs = [
+  {
+    question: "What is PPC advertising?",
+    answer:
+      "PPC (Pay-Per-Click) advertising is a digital marketing strategy where businesses pay only when a user clicks on their advertisement. It allows companies to quickly reach targeted audiences through platforms like Google Ads, Bing Ads, and social media advertising networks.",
+  },
+  {
+    question: "Which platforms do you run PPC campaigns on?",
+    answer:
+      "We manage PPC campaigns across major platforms including Google Ads, Microsoft Ads (Bing), Facebook Ads, Instagram Ads, and LinkedIn Ads. The platform selection depends on your target audience and campaign objectives.",
+  },
+  {
+    question: "How do you choose the right keywords for campaigns?",
+    answer:
+      "Our team conducts detailed keyword research, competitor analysis, and search intent evaluation to identify high-performing keywords that drive qualified traffic and maximize conversions.",
+  },
+  {
+    question: "How much budget do I need for PPC advertising?",
+    answer:
+      "PPC budgets vary depending on industry competition, keywords, and campaign goals. We help you determine an optimal budget that balances cost efficiency with measurable results and return on investment.",
+  },
+  {
+    question: "How do you measure PPC campaign performance?",
+    answer:
+      "We track key performance indicators such as click-through rate (CTR), cost per click (CPC), cost per conversion, return on ad spend (ROAS), and overall campaign conversions to continuously optimize results.",
+  },
+  {
+    question: "How quickly can PPC campaigns generate results?",
+    answer:
+      "Unlike many organic strategies, PPC campaigns can start generating traffic and leads almost immediately after launch. However, continuous optimization over the first few weeks helps improve performance and maximize return on investment.",
+  },
+];
 
   return (
     <main className="min-h-screen bg-white">
@@ -1188,42 +1149,14 @@ export default function PpcPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-primary">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-xl text-gray-300">
-              Get answers to common questions about PPC advertising
-            </p>
-          </motion.div>
-
-          <div className="space-y-4">
-            {faqs.map((faq, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: idx * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-xl p-6 border border-gray-200 hover:border-blue-300 transition-colors"
-              >
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                  {faq.question}
-                </h3>
-                <p className="text-gray-600">{faq.answer}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+{/* FAQs */}
+<FaqAccordion
+  title="PPC Advertising FAQs"
+  subtitle="Find answers to common questions about our pay-per-click advertising services, campaign strategy, budget management, and performance optimization."
+  linkText="Want to launch high-performing ad campaigns? Talk to our PPC specialists."
+  linkHref="/contact"
+  faqs={ppcFaqs}
+/>
 
       {/* Final CTA */}
       <FinalServiceCTA

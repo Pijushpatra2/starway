@@ -3,18 +3,14 @@
 import InnerHero from "@/components/Common/InnerHero";
 import { motion } from "framer-motion";
 import {
-  ArrowRight,
   CheckCircle,
   Target,
   TrendingUp,
   BarChart,
-  Zap,
   Users,
-  Heart,
   MessageCircle,
   Video,
   Rocket,
-  Shield,
   MessageSquare,
   Instagram,
   Facebook,
@@ -39,6 +35,7 @@ import "swiper/css/navigation";
 import SocialMediaTabs from "@/components/Services/SocialMediaTabs";
 import WhyChooseCarousel from "@/components/Services/InnerWhyChooseUs";
 import FinalServiceCTA from "@/components/Services/InnerServiceCTA";
+import FaqAccordion from "@/components/FaqAccordion";
 
 export default function SocialMediaPage() {
   // Platforms we manage
@@ -378,33 +375,39 @@ export default function SocialMediaPage() {
   ];
 
   // FAQ
-  const faqs = [
-    {
-      question: "How often will you post?",
-      answer:
-        "Posting frequency varies by platform and strategy, typically 3-5 times per week on Instagram/Facebook, 1-2 times per day on Twitter, and 1-2 times per week on LinkedIn. We create a custom schedule based on your audience's activity patterns.",
-    },
-    {
-      question: "Do you create reels and videos?",
-      answer:
-        "Absolutely! Short-form video content is a core part of our strategy. We create Reels, TikTok-style videos, Stories, and longer-form content tailored to each platform's best practices and your audience preferences.",
-    },
-    {
-      question: "Which platforms are best for my brand?",
-      answer:
-        "We conduct a thorough analysis of your target audience, industry, and goals to recommend the optimal platform mix. Most businesses benefit from 2-3 primary platforms with a secondary presence on others.",
-    },
-    {
-      question: "How long before results show?",
-      answer:
-        "Initial engagement improvements typically appear within 30 days. Meaningful growth and community building show between 60-90 days, with significant brand impact evident by 6 months.",
-    },
-    {
-      question: "Do you handle comments and DMs?",
-      answer:
-        "Yes, community management is included. We respond to comments, engage with followers, manage DMs, and actively build relationships with your audience during business hours.",
-    },
-  ];
+// Social Media FAQs
+const socialMediaFaqs = [
+  {
+    question: "Which social media platforms do you manage?",
+    answer:
+      "We manage a wide range of social media platforms including Facebook, Instagram, LinkedIn, Twitter (X), TikTok, and YouTube. Our strategies are customized based on your target audience and business goals.",
+  },
+  {
+    question: "Do you create content for social media posts?",
+    answer:
+      "Yes, our team handles the entire content creation process including graphics, captions, hashtags, and posting schedules. We focus on creating engaging content that strengthens your brand and connects with your audience.",
+  },
+  {
+    question: "Can social media marketing help grow my business?",
+    answer:
+      "Absolutely. Social media marketing helps increase brand awareness, build trust with your audience, drive website traffic, and generate leads or sales when executed with the right strategy.",
+  },
+  {
+    question: "Do you run paid social media advertising campaigns?",
+    answer:
+      "Yes, we manage paid advertising campaigns on platforms like Facebook, Instagram, and LinkedIn. Our team optimizes campaigns to maximize reach, engagement, and return on investment.",
+  },
+  {
+    question: "How do you measure social media performance?",
+    answer:
+      "We track key metrics such as engagement rate, follower growth, reach, impressions, and conversions. Detailed monthly reports help you understand how your social media presence is improving over time.",
+  },
+  {
+    question: "How long does it take to see results from social media marketing?",
+    answer:
+      "Social media growth takes time, but businesses typically start seeing noticeable engagement and audience growth within 2–3 months of consistent strategy and content execution.",
+  },
+];
 
   return (
     <main className="min-h-screen bg-white">
@@ -1113,56 +1116,14 @@ export default function SocialMediaPage() {
       </section>
 
       {/* FAQs - Accordion Style */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-primary">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-xl text-gray-300">
-              Everything you need to know about our social media services
-            </p>
-          </motion.div>
-
-          <div className="space-y-4">
-            {faqs.map((faq, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: idx * 0.1 }}
-                viewport={{ once: true }}
-                className="group"
-              >
-                <div className="bg-gradient-to-r from-blue-50 to-white rounded-xl p-6 border border-blue-100 hover:border-blue-300 transition-colors">
-                  <div className="flex items-start gap-4">
-                    <div className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-blue-600 font-bold">Q</span>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                        {faq.question}
-                      </h3>
-                      <div className="flex items-start gap-3">
-                        <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-1">
-                          <span className="text-green-600 text-sm">A</span>
-                        </div>
-                        <p className="text-gray-600">{faq.answer}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+{/* FAQs */}
+<FaqAccordion
+  title="Social Media Marketing FAQs"
+  subtitle="Find answers to common questions about our social media strategy, content creation, audience growth, and performance analytics."
+  linkText="Need help growing your brand online? Talk to our social media experts."
+  linkHref="/contact"
+  faqs={socialMediaFaqs}
+/>
 
       {/* Final CTA */}
       <FinalServiceCTA

@@ -3,48 +3,28 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import {
-  ArrowRight,
   Smartphone,
   Globe,
   Code,
   Palette,
-  Database,
   Shield,
   Zap,
   Users,
   TrendingUp,
   CheckCircle,
-  Clock,
   Layers,
-  Server,
-  Cloud,
-  Lock,
-  SmartphoneIcon,
-  Monitor,
-  Cpu,
-  Wrench,
   MessageCircle,
   Phone,
-  Calendar,
   Rocket,
-  Sparkles,
-  Terminal,
   Box,
   RefreshCw,
-  Eye,
-  FileCode,
   ShoppingCart,
   Building,
   GraduationCap,
   CreditCard,
   HeartPulse,
   Target,
-  Award,
-  BarChart,
   Headphones,
-  Download,
-  Play,
-  Star,
   LayoutDashboard,
   GitBranch,
   LifeBuoy,
@@ -53,85 +33,9 @@ import InnerHero from "@/components/Common/InnerHero";
 import WhyChooseCarousel from "@/components/Services/InnerWhyChooseUs";
 import FinalServiceCTA from "@/components/Services/InnerServiceCTA";
 import TechnologyStackGrid from "@/components/Services/TechnologyStackGrid";
+import FaqAccordion from "@/components/FaqAccordion";
 
 export default function WebAppDevelopmentPage() {
-  const [activeTab, setActiveTab] = useState("website");
-  const [activeTech, setActiveTech] = useState("frontend");
-
-  // Hero stats
-  const heroStats = [
-    { value: "98%", label: "Client Satisfaction" },
-    { value: "240+", label: "Projects Delivered" },
-    { value: "4.9", label: "Average Rating" },
-    { value: "72h", label: "Avg. Delivery Time" },
-  ];
-
-  // Technology stack data
-  const technologies = {
-    frontend: {
-      title: "Frontend Technologies",
-      description:
-        "Modern frameworks for responsive, high-performance interfaces",
-      items: [
-        { name: "React.js", icon: "⚛️", expertise: "Advanced" },
-        { name: "Next.js", icon: "▲", expertise: "Advanced" },
-        { name: "TypeScript", icon: "TS", expertise: "Expert" },
-        { name: "Tailwind CSS", icon: "🎨", expertise: "Advanced" },
-        { name: "Framer Motion", icon: "✨", expertise: "Intermediate" },
-        { name: "Vue.js", icon: "V", expertise: "Intermediate" },
-      ],
-    },
-    backend: {
-      title: "Backend & APIs",
-      description:
-        "Powerful server-side technologies for scalable applications",
-      items: [
-        { name: "Node.js", icon: "⬢", expertise: "Expert" },
-        { name: "Express.js", icon: "⚡", expertise: "Advanced" },
-        { name: "Python/Django", icon: "🐍", expertise: "Intermediate" },
-        { name: "REST APIs", icon: "🔌", expertise: "Expert" },
-        { name: "GraphQL", icon: "📊", expertise: "Advanced" },
-        { name: "Authentication", icon: "🔐", expertise: "Expert" },
-      ],
-    },
-    mobile: {
-      title: "Mobile Development",
-      description: "Cross-platform and native mobile app development",
-      items: [
-        { name: "React Native", icon: "⚛️", expertise: "Advanced" },
-        { name: "Flutter", icon: "🎯", expertise: "Intermediate" },
-        { name: "Swift (iOS)", icon: "🍎", expertise: "Advanced" },
-        { name: "Kotlin (Android)", icon: "🤖", expertise: "Advanced" },
-        { name: "Firebase", icon: "🔥", expertise: "Expert" },
-        { name: "Expo", icon: "🎪", expertise: "Intermediate" },
-      ],
-    },
-    cms: {
-      title: "CMS & Content Management",
-      description: "Flexible content management systems for easy updates",
-      items: [
-        { name: "Custom CMS", icon: "⚙️", expertise: "Expert" },
-        { name: "Headless CMS", icon: "🧩", expertise: "Advanced" },
-        { name: "Strapi", icon: "🔧", expertise: "Advanced" },
-        { name: "WordPress", icon: "W", expertise: "Expert" },
-        { name: "Sanity", icon: "📝", expertise: "Intermediate" },
-        { name: "Contentful", icon: "📦", expertise: "Intermediate" },
-      ],
-    },
-    devops: {
-      title: "DevOps & Hosting",
-      description: "Reliable deployment and scalable infrastructure",
-      items: [
-        { name: "AWS", icon: "☁️", expertise: "Advanced" },
-        { name: "Vercel", icon: "▲", expertise: "Expert" },
-        { name: "Docker", icon: "🐳", expertise: "Intermediate" },
-        { name: "CI/CD", icon: "🔄", expertise: "Advanced" },
-        { name: "DigitalOcean", icon: "🌊", expertise: "Intermediate" },
-        { name: "Firebase", icon: "🔥", expertise: "Expert" },
-      ],
-    },
-  };
-
   // Process steps
   const processSteps = [
     {
@@ -294,61 +198,36 @@ export default function WebAppDevelopmentPage() {
   ];
 
   // FAQs
-  const faqs = [
+  const generalFaqs = [
     {
-      question: "Do I get full control over the CMS?",
+      question: "Do you work with different CMS platforms?",
       answer:
-        "Yes, we provide complete CMS access and training. You can update content, manage users, and add new pages without any technical knowledge.",
+        "Yes, we work with a wide range of CMS platforms including WordPress, Shopify, Webflow, headless CMS solutions, and fully custom CMS systems. Depending on your business requirements, we can implement, customize, or build a CMS that allows you to easily manage your content without technical expertise.",
     },
     {
-      question: "Can you build both website and mobile app together?",
+      question: "Do you build custom web applications from scratch?",
       answer:
-        "Absolutely! We specialize in full-stack development and can create integrated solutions where your website and mobile app share the same backend and database.",
+        "Absolutely. Our team specializes in advanced web application development using modern technologies. We design scalable architectures, write clean and optimized code, and build secure systems tailored to your specific business workflows and requirements.",
     },
     {
-      question: "How long does a typical project take?",
+      question: "Can you develop both web applications and mobile apps?",
       answer:
-        "Timeline varies based on complexity: Basic websites (4-6 weeks), Complex websites (8-12 weeks), Mobile apps (12-16 weeks). We provide detailed timelines during planning.",
+        "Yes, we develop both web applications and mobile applications. Our solutions can be built with a shared backend and database infrastructure, ensuring seamless integration, better performance, and consistent user experience across all platforms.",
     },
     {
-      question: "Do you provide ongoing maintenance?",
+      question: "Do you handle database design and backend setup?",
       answer:
-        "Yes, we offer monthly maintenance packages that include updates, security patches, performance monitoring, and technical support.",
+        "Yes, we provide complete backend development including database architecture, API development, server configuration, and system optimization. Whether it’s SQL or NoSQL databases, we ensure your application is secure, scalable, and built for long-term growth.",
     },
     {
-      question: "What about app store deployment?",
+      question: "How long does a typical development project take?",
       answer:
-        "We handle the complete app store submission process for both Apple App Store and Google Play Store, including compliance and optimization.",
+        "Project timelines depend on the complexity and scope of the solution. A standard website may take 4–6 weeks, while advanced web applications or integrated platforms may take 8–16 weeks. We provide a detailed roadmap and timeline before starting development.",
     },
     {
-      question: "Can you migrate my existing website/app?",
+      question: "Do you provide maintenance and technical support?",
       answer:
-        "Yes, we specialize in platform migration and can seamlessly transfer your existing data to new, optimized platforms without downtime.",
-    },
-  ];
-
-  // Testimonials
-  const testimonials = [
-    {
-      name: "Sarah Johnson",
-      role: "CEO, TechGrowth Inc.",
-      content:
-        "They delivered our SaaS platform 2 weeks ahead of schedule. The CMS is incredibly intuitive, and our users love the mobile app.",
-      rating: 5,
-    },
-    {
-      name: "Michael Chen",
-      role: "CTO, HealthCare Plus",
-      content:
-        "Our healthcare app required complex compliance features. The team delivered a flawless, HIPAA-compliant solution.",
-      rating: 5,
-    },
-    {
-      name: "David Wilson",
-      role: "Founder, EduLearn",
-      content:
-        "The custom CMS they built for our educational platform has saved us countless hours in content management.",
-      rating: 5,
+        "Yes, we offer ongoing maintenance and support services including performance monitoring, security updates, feature enhancements, bug fixes, and infrastructure management to ensure your application continues to run smoothly.",
     },
   ];
 
@@ -604,14 +483,6 @@ export default function WebAppDevelopmentPage() {
                       </span>
                     </div>
 
-                    {/* Icon */}
-                    <div
-                      className={`w-12 h-12 rounded-xl bg-gradient-to-br ${step.color}
-                            flex items-center justify-center mb-4`}
-                    >
-                      <Icon className="w-6 h-6 text-white" />
-                    </div>
-
                     {/* Title */}
                     <h3 className="text-lg font-bold text-gray-900 mb-2">
                       {step.title}
@@ -662,7 +533,7 @@ export default function WebAppDevelopmentPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-destructive mb-6">
               Solutions for Every Industry
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -735,7 +606,7 @@ export default function WebAppDevelopmentPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-destructive mb-6">
               Why CMS-Driven & App-First Approach Matters
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -770,38 +641,6 @@ export default function WebAppDevelopmentPage() {
               );
             })}
           </div>
-
-          {/* Expected Outcomes */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="mt-20 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl p-8 text-white"
-          >
-            <h3 className="text-3xl font-bold mb-8 text-center">
-              Expected Outcomes
-            </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                {
-                  icon: Zap,
-                  text: "Faster loading, conversion-focused websites",
-                },
-                { icon: Database, text: "Full control over content & data" },
-                { icon: TrendingUp, text: "Scalable mobile apps for growth" },
-                { icon: Users, text: "Better user engagement & retention" },
-              ].map((outcome, index) => {
-                const Icon = outcome.icon;
-                return (
-                  <div key={index} className="flex items-start gap-4">
-                    <Icon className="w-6 h-6 text-white flex-shrink-0 mt-1" />
-                    <span>{outcome.text}</span>
-                  </div>
-                );
-              })}
-            </div>
-          </motion.div>
         </div>
       </section>
 
@@ -819,56 +658,13 @@ export default function WebAppDevelopmentPage() {
       />
 
       {/* FAQs */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-primary">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-xl text-gray-300">
-              Everything you need to know about our development process
-            </p>
-          </motion.div>
-
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-xl p-6 border border-gray-200 hover:border-blue-300 transition-colors"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
-                    <div className="text-blue-600 font-bold">Q</div>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                      {faq.question}
-                    </h3>
-                    <div className="flex items-start gap-4">
-                      <div className="w-8 h-8 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0 mt-1">
-                        <span className="text-green-600 font-bold text-sm">
-                          A
-                        </span>
-                      </div>
-                      <p className="text-gray-600">{faq.answer}</p>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FaqAccordion
+        title="Web Application Development FAQs"
+        subtitle="Find answers to common questions about our custom web application development services, process, timelines, and technologies."
+        linkText="Still have questions? Speak with our development experts."
+        linkHref="/contact"
+        faqs={generalFaqs}
+      />
       {/* Final CTA */}
       <FinalServiceCTA
         icon={Layers}
