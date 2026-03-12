@@ -318,8 +318,7 @@ export default function PortfolioSection() {
                   whileHover={{ x: 4 }}
                   whileTap={{ scale: 0.98 }}
                   className={`
-                    relative overflow-hidden px-4 md:px-6 py-3 md:py-4 rounded-xl font-semibold text-left
-                    transition-all duration-300 flex items-center justify-between group text-sm md:text-base
+                    relative overflow-hidden px-4 md:px-6 py-3 md:py-4 rounded-xl font-semibold text-left transition-all duration-300 flex items-center justify-between group text-sm md:text-base
                     ${
                       activeTab === tab.id
                         ? "bg-gradient-to-r from-blue-900 to-blue-800 text-white shadow-lg shadow-blue-900/30"
@@ -352,11 +351,7 @@ export default function PortfolioSection() {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 20 }}
                 transition={{ duration: 0.4 }}
-                className={`
-                  relative rounded-3xl overflow-hidden
-                  bg-gradient-to-br ${tabsData[activeTab].color}
-                  shadow-2xl border border-white/20
-                `}
+                className={`relative rounded-3xl overflow-hidden bg-gradient-to-br ${tabsData[activeTab].color} shadow-2xl border border-white/20 `}
               >
                 {/* Content Container */}
                 <div className="relative z-10 p-8 md:p-12">

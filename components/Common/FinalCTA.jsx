@@ -11,9 +11,7 @@ export default function FinalCTA() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="relative max-w-[80%] mx-auto rounded-3xl
-                   bg-gradient-to-br from-[#0B1D3A] via-[#0F2A55] to-[#0B1D3A]
-                   border border-white/10 p-10 sm:p-14 overflow-hidden"
+        className="relative max-w-[80%] mx-auto rounded-3xl bg-gradient-to-br from-[#0B1D3A] via-[#0F2A55] to-[#0B1D3A] border border-white/10 p-10 sm:p-14 overflow-hidden"
       >
         {/* Decorative SVG Shapes */}
         <svg

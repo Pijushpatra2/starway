@@ -17,21 +17,11 @@ const services = [
 export default function ServicesMarquee() {
   return (
     <div className="w-full py-5">
-      <Marquee
-        speed={55}
-        gradient={false}
-        pauseOnHover
-        direction="left"
-      >
+      <Marquee speed={55} gradient={false} pauseOnHover direction="left">
         {services.map((item, index) => (
           <span
             key={index}
-            className="
-              text-outline
-              text-4xl md:text-5xl lg:text-6xl
-              font-extrabold italic
-              mx-6 whitespace-nowrap
-            "
+            className="text-outline text-4xl md:text-5xl lg:text-6xl font-extrabold italic mx-6 whitespace-nowrap"
           >
             {item}.
           </span>

@@ -13,7 +13,6 @@ export default function DigitalMarketingExpertise() {
   return (
     <section className="w-full bg-secondary py-16 md:py-20 relative">
       <div className="w-full lg:w-[85%] xl:w-[80%] 2xl:w-[70%] mx-auto px-4 relative">
-
         {/* ================= MOBILE LAYOUT (ONLY SMALL SCREEN) ================= */}
         <div className="block sm:hidden">
           {/* TEXT */}
@@ -50,9 +49,10 @@ export default function DigitalMarketingExpertise() {
                 Our Digital Marketing Expertise
               </h2>
               <p className="mt-4 text-black text-sm sm:text-sm md:text-sm xl:text-lg max-w-xl">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam
-                nonumy eirmod tempor Lorem ipsum dolor sit Lorem ipsum dolor sit
-                amet, consectetur adipiscing elit, sed diam nonumy eirmod tempor
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                diam nonumy eirmod tempor Lorem ipsum dolor sit Lorem ipsum
+                dolor sit amet, consectetur adipiscing elit, sed diam nonumy
+                eirmod tempor
               </p>
             </div>
 
@@ -70,7 +70,10 @@ export default function DigitalMarketingExpertise() {
             </div>
 
             <div className="order-5 md:order-5 lg:order-4">
-              <ServiceCard icon={MousePointerClick} title="Pay per click (PPC)" />
+              <ServiceCard
+                icon={MousePointerClick}
+                title="Pay per click (PPC)"
+              />
             </div>
 
             <div className="order-6 md:order-6 lg:order-6">
@@ -114,15 +117,7 @@ export default function DigitalMarketingExpertise() {
 
               {/* Center Button */}
               <div
-                className="
-                absolute inset-4 sm:inset-5 md:inset-6 rounded-full
-                bg-gradient-to-br from-[#FF6B6B] to-[#1E3A8A]
-                flex items-center justify-center
-                shadow-[0_10px_30px_rgba(11,61,104,0.6)]
-                transition-all duration-300
-                group-hover:scale-105
-                group-hover:shadow-[0_15px_40px_rgba(11,61,104,0.8)]
-              "
+                className="absolute inset-4 sm:inset-5 md:inset-6 rounded-full bg-gradient-to-br from-[#FF6B6B] to-[#1E3A8A] flex items-center justify-center shadow-[0_10px_30px_rgba(11,61,104,0.6)] transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_15px_40px_rgba(11,61,104,0.8)]"
               >
                 {/* Arrow */}
                 <svg
@@ -142,7 +137,6 @@ export default function DigitalMarketingExpertise() {
             </button>
           </div>
         </div>
-
       </div>
     </section>
   );
@@ -152,29 +146,9 @@ export default function DigitalMarketingExpertise() {
 
 function ServiceCard({ icon: Icon, title }) {
   return (
-    <div
-      className="
-        group h-[220px] sm:h-[240px] md:h-[200px] xl:h-[250px]
-        rounded-xl p-5
-        bg-gradient-to-b from-[#1E6FB7] to-[#0B3D68]
-        text-white shadow-lg
-        hover:scale-[1.03] transition-transform
-        font-light
-        cursor-pointer
-      "
-    >
+    <div className="group h-[220px] sm:h-[240px] md:h-[200px] xl:h-[250px] rounded-xl p-5 bg-gradient-to-b from-[#1E6FB7] to-[#0B3D68] text-white shadow-lg hover:scale-[1.03] transition-transform font-light cursor-pointer">
       <div className="w-[90%] h-[95%] mx-auto flex flex-col justify-evenly">
-        <div
-          className="
-            relative w-16 h-16 sm:w-20 sm:h-20 lg:w-16 lg:h-16 xl:w-20 xl:h-20
-            rounded-2xl
-            backdrop-blur-xl
-            bg-white/10
-            border border-white/50
-            flex items-center justify-center
-            transition-all duration-300
-          "
-        >
+        <div className="relative w-16 h-16 sm:w-20 sm:h-20 lg:w-16 lg:h-16 xl:w-20 xl:h-20 rounded-2xl backdrop-blur-xl bg-white/10 border border-white/50 flex items-center justify-center transition-all duration-300">
           <div className="absolute inset-0 rounded-2xl overflow-hidden">
             <div className="absolute w-[10px] h-[10px] bg-white rounded-full shadow-[0_0_10px_#ffffff] animate-border-orbit"></div>
           </div>
@@ -194,16 +168,7 @@ function ServiceCard({ icon: Icon, title }) {
 
 function ServiceCardMobile({ icon: Icon, title }) {
   return (
-    <div
-      className="
-        h-[150px]
-        rounded-xl p-4
-        bg-gradient-to-b from-[#1E6FB7] to-[#0B3D68]
-        text-white shadow-md
-        flex flex-col justify-center items-center
-        gap-3
-      "
-    >
+    <div className="h-[150px] rounded-xl p-4 bg-gradient-to-b from-[#1E6FB7] to-[#0B3D68] text-white shadow-md flex flex-col justify-center items-center gap-3">
       <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/40 flex items-center justify-center">
         <Icon className="w-8 h-8 text-white" />
       </div>
