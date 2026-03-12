@@ -19,6 +19,7 @@ import {
   ShoppingBag,
   HeartPulse,
   Home,
+  FileText,
   Search as SearchIcon,
   Target as TargetIcon,
   TrendingUp as TrendingUpIcon,
