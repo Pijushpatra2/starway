@@ -942,7 +942,6 @@ const uiuxFaqs = [
   </div>
 </section>
 
-      {/* FAQs */}
 {/* FAQs */}
 <FaqAccordion
   title="UI/UX Design FAQs"
