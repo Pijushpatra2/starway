@@ -32,56 +32,6 @@ const logos = [
   { src: "/images/campain/techstack/tech-24.png", alt: "Stitcher" },
 
 ];
-
-// export default function PlatformCarousel() {
-//   return (
-//     <div className="relative -mt-12 flex justify-center">
-
-//       <div className="bg-white rounded-2xl shadow-lg py-8 w-full max-w-[75%]">
-//         {/* google review */}
-//         <div className="absolute top-0 flex items-center bg-amber-50 z-30">
-//           <div className="w-[200px] h-[104px] bg-cyan-600" />
-//         </div>
-
-//         <Swiper
-//           modules={[Autoplay]}
-//           spaceBetween={40}
-//           slidesPerView={4}
-//           loop={true}
-//           autoplay={{
-//             delay: 0,
-//             disableOnInteraction: false,
-//           }}
-//           speed={5000}
-//           breakpoints={{
-//             320: { slidesPerView: 2 },
-//             640: { slidesPerView: 3 },
-//             1024: { slidesPerView: 5 },
-//           }}
-//         //   className="px-3"
-//         >
-//           {logos.map((logo, index) => (
-//             <SwiperSlide key={index}>
-//               <div className="flex justify-center items-center">
-//                 <Image
-//                   src={logo.src}
-//                   alt={logo.alt}
-//                   width={140}
-//                   height={50}
-//                   className="object-contain h-10 w-auto  transition duration-300"
-//                 />
-//               </div>
-//             </SwiperSlide>
-//           ))}
-//         </Swiper>
-
-//       </div>
-//     </div>
-//   );
-// }
-
-
-
 export default function PlatformCarousel() {
   return (
     <div className="relative -mt-12 flex justify-center">

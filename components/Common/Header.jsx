@@ -128,7 +128,7 @@ function Header() {
           </Link>
 
           {/* DESKTOP NAV */}
-          <nav className="hidden sm:flex items-center gap-6 md:gap-8">
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-3">
             {navlink.map((item, i) => {
               const active = isActive(item.link);
 
@@ -249,7 +249,7 @@ function Header() {
 
           {/* MOBILE MENU ICON */}
           <Menu
-            className="sm:hidden w-6 h-6 text-gray-900 cursor-pointer"
+            className="lg:hidden w-6 h-6 text-gray-900 cursor-pointer"
             onClick={() => setShowSidebar(true)}
           />
         </div>

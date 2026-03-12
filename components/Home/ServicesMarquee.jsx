@@ -16,7 +16,7 @@ const services = [
 
 export default function ServicesMarquee() {
   return (
-    <div className="w-full py-10">
+    <div className="w-full py-5">
       <Marquee
         speed={55}
         gradient={false}
