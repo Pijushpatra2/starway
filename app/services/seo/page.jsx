@@ -20,6 +20,7 @@ import {
   HeartPulse,
   Home,
   FileText,
+  Settings,
   Search as SearchIcon,
   Target as TargetIcon,
   TrendingUp as TrendingUpIcon,
