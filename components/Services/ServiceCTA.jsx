@@ -10,16 +10,7 @@ export default function ServiceCTA() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="
-          relative max-w-7xl mx-auto
-          rounded-3xl
-          bg-gradient-to-br from-[#0B1D3A] via-[#0F2A55] to-[#0B1D3A]
-          border border-white/10
-          px-6 py-10
-          sm:px-10 sm:py-14
-          lg:px-14 lg:py-16
-          overflow-hidden
-        "
+        className="relative max-w-7xl mx-auto rounded-3xl bg-gradient-to-br from-[#0B1D3A] via-[#0F2A55] to-[#0B1D3A] border border-white/10 px-6 py-10 sm:px-10 sm:py-14 lg:px-14 lg:py-16 overflow-hidden"
       >
         {/* Decorative SVG Shapes */}
         <svg
@@ -41,19 +32,11 @@ export default function ServiceCTA() {
           
           {/* LEFT CONTENT */}
           <div className="text-center md:text-left">
-            <h2 className="
-              text-white font-extrabold
-              text-2xl sm:text-3xl md:text-4xl lg:text-5xl
-            ">
+            <h2 className="text-white font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
               Ready to Grow With Us?
             </h2>
 
-            <p className="
-              text-white/80
-              text-base sm:text-lg md:text-xl
-              mt-4 sm:mt-6
-              leading-relaxed
-            ">
+            <p className="text-white/80 text-base sm:text-lg md:text-xl mt-4 sm:mt-6 leading-relaxed">
               Partner with a digital marketing team focused on strategy,
               creativity, and measurable performance.
             </p>
@@ -65,37 +48,16 @@ export default function ServiceCTA() {
 
           {/* RIGHT CTA */}
           <div className="flex flex-col items-center md:items-end">
-            <div className="
-              flex flex-col sm:flex-row
-              items-stretch sm:items-center
-              gap-4
-              w-full max-w-md
-            ">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full max-w-md">
               {/* Email Input */}
               <input
                 type="email"
                 placeholder="Enter your email address"
-                className="
-                  w-full sm:flex-[3]
-                  px-5 py-4
-                  rounded-xl
-                  bg-white text-gray-900
-                  text-sm sm:text-base
-                  focus:outline-none focus:ring-2 focus:ring-[#abc2ed]
-                "
+                className="w-full sm:flex-[3] px-5 py-4 rounded-xl bg-white text-gray-900 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#abc2ed]"
               />
-
               {/* Button */}
               <button
-                className="
-                  w-full sm:flex-[2]
-                  px-5 py-4
-                  rounded-xl
-                  bg-[#abc2ed] text-[#0B1D3A]
-                  font-semibold
-                  shadow-lg
-                  hover:scale-105 transition-transform
-                "
+                className="w-full sm:flex-[2] px-5 py-4 rounded-xl bg-[#abc2ed] text-[#0B1D3A] font-semibold shadow-lg hover:scale-105 transition-transform"
               >
                 Subscribe
               </button>

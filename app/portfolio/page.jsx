@@ -186,7 +186,7 @@ export default function Portfolio() {
 
       {/* Portfolio Overview */}
       <section className="py-20 bg-[#96b3e9]">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -215,7 +215,7 @@ export default function Portfolio() {
               <div className="space-y-4">
                 <div className="p-3 bg-white border border-gray-200 rounded-2xl shadow-sm">
                   {/* Text on top */}
-                  <h3 className="text-2xl font-semibold text-gray-900 uppercase mb-3 font-sans">
+                  <h3 className="text-md sm:text-xl xl:text-2xl font-semibold text-gray-900 uppercase mb-3 font-sans">
                     Strategy First
                   </h3>
 
@@ -231,7 +231,7 @@ export default function Portfolio() {
                 </div>
 
                 <div className="p-3 bg-white border border-gray-200 rounded-2xl shadow-sm">
-                  <h3 className="text-2xl font-semibold text-gray-900 uppercase mb-3 font-sans">
+                  <h3 className="text-md sm:text-xl xl:text-2xl font-semibold text-gray-900 uppercase mb-3 font-sans">
                     Full-Stack Solutions
                   </h3>
 
@@ -246,13 +246,10 @@ export default function Portfolio() {
                 </div>
               </div>
               <div className="space-y-4 mt-8">
-                <div className="p-6 bg-white border border-gray-200 rounded-2xl shadow-sm">
-                  <h3 className="text-sm font-bold text-gray-900 uppercase mb-1">
+                <div className="p-3 bg-white border border-gray-200 rounded-2xl shadow-sm">
+                  <h3 className="text-md sm:text-xl xl:text-2xl font-semibold text-gray-900 uppercase mb-3 font-sans">
                     AI-Powered
                   </h3>
-                  <p className="text-xs text-gray-500 mb-4">
-                    Smart automation & optimization
-                  </p>
 
                   <div className="relative w-full h-[120px] rounded-xl overflow-hidden">
                     <Image
@@ -264,14 +261,10 @@ export default function Portfolio() {
                   </div>
                 </div>
 
-                <div className="p-6 bg-white border border-gray-200 rounded-2xl shadow-sm">
-                  <h3 className="text-sm font-bold text-gray-900 uppercase mb-1">
+                <div className="p-3 bg-white border border-gray-200 rounded-2xl shadow-sm">
+                  <h3 className="text-md sm:text-xl xl:text-2xl font-semibold text-gray-900 uppercase mb-3 font-sans">
                     Results-Driven
                   </h3>
-                  <p className="text-xs text-gray-500 mb-4">
-                    Focused on measurable growth
-                  </p>
-
                   <div className="relative w-full h-[120px] rounded-xl overflow-hidden">
                     <Image
                       src="/images/portfolio/result.jpg"
@@ -288,45 +281,56 @@ export default function Portfolio() {
       </section>
 
       {/* Portfolio Filter */}
-      <section className="py-20 bg-secondary">
-        <div className="max-w-7xl mx-auto py-10 bg-secondary">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
-            <div>
-              <h2 className="text-2xl font-bold text-gray-900">
+      <section className="py-14 sm:py-16 lg:py-20 bg-secondary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header + Search */}
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-10">
+            {/* Title */}
+            <div className="text-center lg:text-left">
+              <h2 className="text-2xl lg:text-3xl font-bold text-gray-900">
                 Explore Our Work
               </h2>
-              <p className="text-gray-600">Filter by service category</p>
+              <p className="text-gray-600 text-sm sm:text-base">
+                Filter by service category
+              </p>
             </div>
-            <div className="flex items-center gap-4">
-              <div className="relative">
+
+            {/* Search + Sort */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full lg:w-auto">
+              {/* Search */}
+              <div className="relative w-full sm:w-64">
                 <Search
-                  className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
-                  size={20}
+                  className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                  size={18}
                 />
+
                 <input
                   type="text"
                   placeholder="Search projects..."
-                  className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full pl-9 pr-4 py-2.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
-              <button className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50">
-                <Filter size={20} />
+
+              {/* Sort Button */}
+              <button className="flex items-center justify-center gap-2 px-4 py-2.5 border border-gray-300 rounded-lg hover:bg-gray-50 transition text-sm">
+                <Filter size={18} />
                 <span>Sort</span>
               </button>
             </div>
           </div>
 
           {/* Category Filters */}
-          <div className="flex flex-wrap gap-2 mb-12">
+          <div className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 mb-10 sm:mb-12">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
-                  activeCategory === category
-                    ? "bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-lg shadow-blue-500/20"
-                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                }`}
+                className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all
+          ${
+            activeCategory === category
+              ? "bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-lg shadow-blue-500/20"
+              : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+          }`}
               >
                 {category}
               </button>
@@ -334,7 +338,7 @@ export default function Portfolio() {
           </div>
 
           {/* Portfolio Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {filteredItems.map((item) => (
               <div
                 key={item.id}
@@ -342,59 +346,66 @@ export default function Portfolio() {
                 onClick={() => setActiveCaseStudy(item)}
               >
                 {/* Project Image */}
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-40 sm:h-44 lg:h-48 overflow-hidden">
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-20`}
-                  ></div>
+                  />
+
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-5xl font-bold text-gray-900/10">
+                    <div className="text-4xl sm:text-5xl font-bold text-gray-900/10">
                       {item.client.charAt(0)}
                     </div>
                   </div>
-                  <div className="absolute top-4 right-4">
-                    <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-sm font-medium">
+
+                  <div className="absolute top-3 right-3">
+                    <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs sm:text-sm font-medium">
                       {item.category}
                     </span>
                   </div>
                 </div>
 
                 {/* Project Details */}
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-4">
+                <div className="p-5 sm:p-6">
+                  <div className="flex items-start justify-between mb-3">
                     <div>
-                      <span className="text-sm text-gray-500">
+                      <span className="text-xs sm:text-sm text-gray-500">
                         {item.industry}
                       </span>
-                      <h3 className="text-xl font-bold text-gray-900 mt-1">
+
+                      <h3 className="text-lg sm:text-xl font-bold text-gray-900 mt-1">
                         {item.title}
                       </h3>
                     </div>
-                    <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center group-hover:bg-blue-100 transition-colors">
-                      <ChevronRight className="text-blue-600" size={20} />
+
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 bg-blue-50 rounded-lg flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                      <ChevronRight className="text-blue-600" size={18} />
                     </div>
                   </div>
 
-                  <p className="text-gray-600 mb-6">{item.outcome}</p>
+                  <p className="text-gray-600 text-sm sm:text-base mb-5">
+                    {item.outcome}
+                  </p>
 
+                  {/* Services */}
                   <div className="flex flex-wrap gap-2">
                     {item.services.slice(0, 3).map((service, idx) => (
                       <span
                         key={idx}
-                        className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
+                        className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs sm:text-sm"
                       >
                         {service}
                       </span>
                     ))}
                   </div>
 
-                  <div className="flex items-center justify-between mt-6 pt-6 border-t border-gray-100">
-                    <div className="flex items-center gap-2">
-                      <div className="flex items-center gap-1">
-                        <TrendingUp className="text-green-500" size={16} />
-                        <span className="text-sm text-gray-600">Results:</span>
-                      </div>
+                  {/* Footer */}
+                  <div className="flex items-center justify-between mt-5 pt-5 border-t border-gray-100">
+                    <div className="flex items-center gap-1 text-sm text-gray-600">
+                      <TrendingUp className="text-green-500" size={16} />
+                      Results
                     </div>
-                    <span className="text-sm font-medium text-blue-600">
+
+                    <span className="text-xs sm:text-sm font-medium text-blue-600">
                       View Case Study →
                     </span>
                   </div>
@@ -405,71 +416,12 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Results & Impact Section */}
-      <section className="bg-primary py-20">
-        <div className="w-[90%] max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Measurable <span className="text-blue-600">Impact</span>, Not Just
-              Deliverables
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our work is defined by the results we achieve for our clients
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {results.map((result, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-lg transition-shadow"
-              >
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <result.icon className="text-blue-600" size={28} />
-                </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">
-                  {result.metric}
-                </div>
-                <p className="text-gray-600">{result.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Industries Served */}
-      <section className="py-20 bg-secondary">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-            Industries We Serve
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {industries.map((industry, index) => (
-              <div key={index} className="text-center group cursor-pointer">
-                <div className="w-20 h-20 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-100 transition-colors">
-                  <industry.icon
-                    className="text-gray-700 group-hover:text-blue-600 transition-colors"
-                    size={32}
-                  />
-                </div>
-                <h3 className="font-bold text-gray-900 mb-1">
-                  {industry.name}
-                </h3>
-                <p className="text-sm text-gray-500">
-                  {industry.count} projects
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Why Our Work Delivers Results */}
-      <section className="py-20 bg-secondary">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 bg-[#96b3e9]">
+        <div className="max-w-7xl px-4 sm:px-6 lg:px-8 lg:px-0 mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold text- mb-8">
                 Why Our Work{" "}
                 <span className="text-blue-600">Delivers Results</span>
               </h2>
@@ -477,7 +429,7 @@ export default function Portfolio() {
               <div className="space-y-6">
                 <div className="flex gap-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                    <div className="w-12 h-12 bg-blue-100 rounded-lg hidden sm:flex items-center justify-center ">
                       <Target className="text-blue-600" size={24} />
                     </div>
                   </div>
@@ -495,7 +447,7 @@ export default function Portfolio() {
 
                 <div className="flex gap-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                    <div className="w-12 h-12 bg-green-100 hidden sm:flex rounded-lg items-center justify-center">
                       <Users className="text-green-600" size={24} />
                     </div>
                   </div>
@@ -512,7 +464,7 @@ export default function Portfolio() {
 
                 <div className="flex gap-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                    <div className="w-12 h-12 bg-purple-100 hidden sm:flex rounded-lg items-center justify-center">
                       <BarChart className="text-purple-600" size={24} />
                     </div>
                   </div>

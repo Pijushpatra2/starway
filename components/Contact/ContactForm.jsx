@@ -10,7 +10,7 @@ export default function ContactSection() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff40_1px,transparent_1px),linear-gradient(to_bottom,#ffffff40_1px,transparent_1px)] bg-[size:48px_48px]" />
 
       {/* MAIN CARD */}
-      <div className="relative w-full max-w-7xl rounded-[32px] border-[3px] border-[#101828] shadow-xl bg-white p-3 sm:p-4">
+      <div className="relative w-full max-w-7xl rounded-[32px] border-[3px] border-[#101828] shadow-xl bg-white p-0 sm:p-4">
         {/* INNER WRAPPER */}
         <div className="w-full rounded-[28px] overflow-hidden flex flex-col lg:flex-row bg-white">
           {/* LEFT PANEL */}
@@ -118,7 +118,7 @@ export default function ContactSection() {
           </div>
 
           {/* RIGHT FORM PANEL */}
-          <div className="w-full lg:w-[62%] bg-secondary px-8 py-10 md:px-10 md:py-12 lg:px-14 lg:py-16 flex flex-col justify-center rounded-[24px] m-3 sm:m-4 md:m-0 lg:m-3">
+          <div className="w-full lg:w-[62%] bg-secondary px-2 sm:px-8 py-10 md:px-10 md:py-12 lg:px-14 lg:py-16 flex flex-col justify-center rounded-none sm:rounded-[24px] m-0 sm:m-2 md:m-0 lg:m-3">
 
             {/* Heading */}
             <h2 className="text-[32px] sm:text-[38px] lg:text-[44px] font-semibold text-gray-900 leading-[1.15] tracking-tight">
